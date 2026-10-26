@@ -1,0 +1,22 @@
+{
+  "name": "ownbit-btc-taproot-js",
+  "private": true,
+  "description": "BTC Taproot (BIP86 bc1p) addresses and key-path spends for Ownbit iOS; bundled into components/JavaScriptBridge/btctaprootjs-lib-bridge/btctaproot-lib-app.js",
+  "scripts": {
+    "build": "sh build.sh",
+    "test": "node test/vectors.js"
+  },
+  "dependencies": {
+    "@bitcoinerlab/secp256k1": "1.2.0",
+    "bip32": "4.0.0",
+    "bitcoinjs-lib": "6.1.8",
+    "buffer": "6.0.3",
+    "ecpair": "2.1.0",
+    "events": "3.3.0",
+    "process": "0.11.10",
+    "stream-browserify": "3.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

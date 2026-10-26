@@ -1,0 +1,3 @@
+# Store the JavaScript bundles and fixtures byte-for-byte: their SHA-256 must match the app (js/README.md).
+js/** -text
+iOS/Tests/OwnbitCoreTests/PublicProtocol/Fixtures/** -text

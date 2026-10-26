@@ -1,0 +1,4633 @@
+{
+ "format": 1,
+ "generator": "tools/pubsigner/extract-vocabulary.mjs",
+ "engine": {
+  "sha256": "d89f76bdeec85d90fd88f07372100e9f4c07ab789530ac2bcffd52be536e7b05",
+  "bytes": 1044192,
+  "version": "1.0.0",
+  "edition": "ownbit",
+  "sources": [
+   {
+    "file": "protocols.js",
+    "sha256": "76687eeba448c834d98cd59b57193b612e678ddeb5e692521fbed78eeb013f11"
+   },
+   {
+    "file": "src/bitcoin-policy.js",
+    "sha256": "e88c2f571421288867e8ba54dde2e13a174731b9754370e0ec8e37de589fada4"
+   },
+   {
+    "file": "src/bitcoin.js",
+    "sha256": "99dcbd18137cd4627ec40bf06fb4480773dd629f5309cb209c39c2efab864670"
+   },
+   {
+    "file": "src/evm.js",
+    "sha256": "b0398a78cb1111da5ff4676973303124ebb830e21d2d6c551b733fc62481467d"
+   },
+   {
+    "file": "src/index.js",
+    "sha256": "b82d8af605c083d04c654461833201464d364877dfdfb62aa45e7023a307c033"
+   },
+   {
+    "file": "src/keys.js",
+    "sha256": "a070d0f79b31c04b86402b7030da81b7bf9f359673e98ee401c3ec87399cf315"
+   },
+   {
+    "file": "src/nft-orders.js",
+    "sha256": "f012c36602ffb40de3c7b2c8549665292978001b687b50d8ac343bd18c40ef6b"
+   },
+   {
+    "file": "src/polyfills.js",
+    "sha256": "291b571b56d7d513e56be0409764f9d9411f4c614adc878118fc6b31cc2c3cfd"
+   },
+   {
+    "file": "src/public-index.js",
+    "sha256": "e46238b9ea65e27c2595adc1ac921b2fd834d2c93f3dee1ef1f954d861653e43"
+   },
+   {
+    "file": "src/resolver.js",
+    "sha256": "78b77b2c4d76636cc4b3a29c129e476f0040d4384f95da030a31e0aa3c892eb5"
+   },
+   {
+    "file": "src/solana.js",
+    "sha256": "aaf77479980a9028a3cf567b3abd2cf6cd0919c0fab640935c651a3e70546ebd"
+   },
+   {
+    "file": "src/token-registry.js",
+    "sha256": "132519c1bea3f6aab1c59911ae68b84b83f661a7b62c97de0db54ff42d55a64d"
+   },
+   {
+    "file": "src/tron.js",
+    "sha256": "3940a31c5f6df3a3442fd0453d584cb08d1d7876168e7c511c903885c1a9cf9d"
+   },
+   {
+    "file": "src/util.js",
+    "sha256": "94ad4fb48ee01758e4186a471a5293762dd36089b937a7b8cb63a1f9279f1020"
+   }
+  ]
+ },
+ "notes": [
+  "Engine text is English. Map codes, statuses, actions and the `translate` warnings; show anything else verbatim (never drop it).",
+  "`text` uses %1$s… for runtime values (Android format syntax, %% is a literal percent); `pattern` is anchored, one group per placeholder, in order.",
+  "When several patterns match one text, use the entry with the longest `text` (e.g. \"Input %1$s sighash\" before \"Input %1$s\").",
+  "hits = occurrences in the golden-vector reviews (core/jsengine/src/androidTest/assets/pubsigner/vectors.json); sites = source locations.",
+  "warnings: the 25 translated ones first (translate: true, a frozen curated list in a fixed order), then the others by rank (rank = corpus frequency rank). ownbitAlias: an untranslated engine warning Ownbit shows with its own string of the same meaning (PublicProtocol.warn.<id>)."
+ ],
+ "errorCodes": [
+  {
+   "code": "ADDRESS",
+   "sites": 4,
+   "files": [
+    "src/solana.js",
+    "src/tron.js"
+   ],
+   "messages": [
+    "Associated token address does not match owner and mint.",
+    "Invalid TRON address in transaction.",
+    "Invalid TRON address.",
+    "Unable to derive program address."
+   ]
+  },
+  {
+   "code": "AMOUNT",
+   "sites": 5,
+   "files": [
+    "src/bitcoin.js",
+    "src/tron.js"
+   ],
+   "messages": [
+    "Invalid Bitcoin input amount.",
+    "Invalid Bitcoin output amount.",
+    "Invalid TRX call value.",
+    "Invalid TRX transfer amount.",
+    "Invalid resource balance."
+   ]
+  },
+  {
+   "code": "CALLDATA",
+   "sites": 5,
+   "files": [
+    "src/evm.js"
+   ],
+   "messages": [
+    "Contract call uses a non-canonical or trailing encoding.",
+    "Empty MultiSend batch.",
+    "Invalid MultiSend operation.",
+    "Invalid Safe operation.",
+    "Malformed contract call."
+   ]
+  },
+  {
+   "code": "CHAIN",
+   "sites": 1,
+   "files": [
+    "src/public-index.js"
+   ],
+   "messages": [
+    "Unsupported address chain"
+   ]
+  },
+  {
+   "code": "CHAIN_ID",
+   "sites": 5,
+   "files": [
+    "src/evm.js"
+   ],
+   "messages": [
+    "Chain ID does not match the signing request.",
+    "Conflicting network context in the request and transport.",
+    "EIP-712 chain ID does not match the signing request.",
+    "Transport chain ID differs from the transaction.",
+    "Unprotected or missing-chain-ID EVM transactions are refused."
+   ]
+  },
+  {
+   "code": "DESCRIPTOR",
+   "sites": 6,
+   "files": [
+    "src/bitcoin-policy.js"
+   ],
+   "messages": [
+    "Every cosigner needs an origin, public xpub, receive/change branch and unhardened wildcard.",
+    "Invalid descriptor character.",
+    "Invalid or oversized descriptor.",
+    "Missing or incorrect descriptor checksum.",
+    "Only wsh(multi/sortedmulti) and sh(wsh(multi/sortedmulti)) descriptors are supported.",
+    "Unsupported descriptor wrapper."
+   ]
+  },
+  {
+   "code": "ENCODING",
+   "sites": 9,
+   "files": [
+    "src/util.js"
+   ],
+   "messages": [
+    "Expected hexadecimal text.",
+    "Invalid UTF-8 text.",
+    "Invalid base64 data.",
+    "Invalid compact length.",
+    "Invalid or oversized base64 data.",
+    "Invalid or oversized hexadecimal data.",
+    "Non-canonical compact length.",
+    "Trailing transaction bytes."
+   ]
+  },
+  {
+   "code": "ENTROPY",
+   "sites": 1,
+   "files": [
+    "src/keys.js"
+   ],
+   "messages": [
+    "Entropy must contain 128–256 bits in 32-bit steps."
+   ]
+  },
+  {
+   "code": "FEE",
+   "sites": 5,
+   "files": [
+    "src/bitcoin.js",
+    "src/solana.js",
+    "src/tron.js"
+   ],
+   "messages": [
+    "Bitcoin output total exceeds verified inputs.",
+    "Duplicate compute budget instruction.",
+    "Invalid TRON fee limit.",
+    "Invalid compute unit limit.",
+    "TRON contract calls require an explicit fee limit."
+   ]
+  },
+  {
+   "code": "FINGERPRINT",
+   "sites": 1,
+   "files": [
+    "src/index.js"
+   ],
+   "messages": [
+    "Signing request belongs to a different wallet."
+   ]
+  },
+  {
+   "code": "GAS",
+   "sites": 3,
+   "files": [
+    "src/evm.js"
+   ],
+   "messages": [
+    "Gas limit must be positive.",
+    "Gas price is missing.",
+    "Priority fee exceeds maximum fee."
+   ]
+  },
+  {
+   "code": "INDEX",
+   "sites": 5,
+   "files": [
+    "src/keys.js",
+    "src/public-index.js"
+   ],
+   "messages": [
+    "Invalid Bitcoin account.",
+    "Invalid TRON address cache size",
+    "Invalid account index.",
+    "Invalid address page",
+    "Unsupported TRON address scheme"
+   ]
+  },
+  {
+   "code": "INSTRUCTION",
+   "sites": 13,
+   "files": [
+    "src/solana.js"
+   ],
+   "messages": [
+    "Invalid Squads memo option.",
+    "Invalid associated token account instruction.",
+    "Invalid deactivate accounts.",
+    "Invalid stake delegate accounts.",
+    "Invalid stake withdrawal accounts.",
+    "Invalid token signer accounts.",
+    "Metaplex edition account does not match the mint.",
+    "Metaplex metadata account does not match the mint.",
+    "Metaplex token record does not match the destination token account.",
+    "Metaplex token record does not match the source token account.",
+    "Unexpected associated account programs.",
+    "Unexpected number of instruction accounts.",
+    "Unsupported token authority change."
+   ]
+  },
+  {
+   "code": "INTEGER",
+   "sites": 2,
+   "files": [
+    "src/util.js"
+   ],
+   "messages": [
+    "Expected an unsigned integer.",
+    "Integer is outside the supported range."
+   ]
+  },
+  {
+   "code": "INTEGRITY",
+   "sites": 17,
+   "files": [
+    "src/bitcoin.js",
+    "src/index.js",
+    "src/resolver.js",
+    "src/tron.js"
+   ],
+   "messages": [
+    "A TronLink ownership check is request type 99.",
+    "An ownership check carries no raw_data JSON.",
+    "Bitcoin transaction changed while signing.",
+    "Previous signature changed PSBT global metadata",
+    "Previous signature changed PSBT input metadata",
+    "Previous signature changed PSBT output metadata",
+    "Previous signature changed an existing signature",
+    "Previous signature changed the transaction",
+    "Previous signature does not belong to this signing plan",
+    "Previous signature dropped an existing signature",
+    "Signing bytes changed after review",
+    "TRON contract type URL does not match the contract type.",
+    "TRON raw_data JSON differs from the signed protobuf bytes.",
+    "TRON txID does not match raw_data_hex.",
+    "The request changed after review. Review the transaction again.",
+    "The request or signing plan changed after review",
+    "The signing targets do not match the request and decrypted wallet"
+   ]
+  },
+  {
+   "code": "INVALID_REQUEST",
+   "sites": 1,
+   "files": [
+    "src/index.js"
+   ],
+   "messages": [
+    "The payload is malformed, unsupported or inconsistent. No signature was produced."
+   ]
+  },
+  {
+   "code": "LIMIT",
+   "sites": 17,
+   "files": [
+    "src/bitcoin.js",
+    "src/evm.js",
+    "src/index.js",
+    "src/resolver.js",
+    "src/solana.js",
+    "src/util.js"
+   ],
+   "messages": [
+    "Bitcoin transaction must have 1–100 inputs and outputs.",
+    "Invalid or oversized token batch.",
+    "Invalid public wallet collection",
+    "Memo is too large.",
+    "MultiSend calldata is too large.",
+    "MultiSend contains too many calls.",
+    "Nested calls are too deep.",
+    "Payload is too large.",
+    "Request exceeds one megabyte.",
+    "Request nesting is too deep.",
+    "Serialized Solana transaction exceeds the network packet limit.",
+    "Solana requires 1–64 instructions.",
+    "Squads memo is too large.",
+    "Too many EIP-712 types.",
+    "Too many Permit2 token allowances.",
+    "Too many signing targets",
+    "Typed value nesting is too deep."
+   ]
+  },
+  {
+   "code": "LOOKUP_TABLE",
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ],
+   "messages": [
+    "Address lookup tables require independently trusted account data and are refused offline. Export a transaction with static account keys."
+   ]
+  },
+  {
+   "code": "MESSAGE",
+   "sites": 9,
+   "files": [
+    "src/solana.js",
+    "src/tron.js"
+   ],
+   "messages": [
+    "Control bytes are not allowed in signed Solana messages.",
+    "Duplicate static Solana account keys.",
+    "Instruction refers to an unresolved account.",
+    "Invalid Solana message header.",
+    "Invalid TRON personal message encoding.",
+    "Program account cannot be a required signer.",
+    "Solana message prefix could represent a transaction header.",
+    "Solana messages must be 1–1024 bytes.",
+    "TRON personal messages must contain 1–8192 bytes."
+   ]
+  },
+  {
+   "code": "MNEMONIC",
+   "sites": 2,
+   "files": [
+    "src/keys.js"
+   ],
+   "messages": [
+    "Invalid recovery phrase.",
+    "Recovery phrase has invalid words or checksum."
+   ]
+  },
+  {
+   "code": "NETWORK",
+   "sites": 7,
+   "files": [
+    "src/bitcoin.js",
+    "src/evm.js",
+    "src/keys.js",
+    "src/solana.js",
+    "src/token-registry.js",
+    "src/tron.js"
+   ],
+   "messages": [
+    "Unsupported cosigner profile.",
+    "Unsupported network"
+   ]
+  },
+  {
+   "code": "OPERATION",
+   "sites": 1,
+   "files": [
+    "src/index.js"
+   ],
+   "messages": [
+    "Unsupported engine operation."
+   ]
+  },
+  {
+   "code": "OUTPOINT",
+   "sites": 1,
+   "files": [
+    "src/bitcoin.js"
+   ],
+   "messages": [
+    "Duplicate Bitcoin input outpoint."
+   ]
+  },
+  {
+   "code": "PASSPHRASE",
+   "sites": 1,
+   "files": [
+    "src/keys.js"
+   ],
+   "messages": [
+    "BIP39 passphrase is too long."
+   ]
+  },
+  {
+   "code": "PATH",
+   "sites": 13,
+   "files": [
+    "src/bitcoin-policy.js",
+    "src/keys.js",
+    "src/public-index.js"
+   ],
+   "messages": [
+    "Address index is outside the supported range",
+    "Derivation index is too large.",
+    "Ed25519 paths must be fully hardened.",
+    "Expected a Bitcoin BIP44/49/84/86/48 path.",
+    "Invalid cosigner origin.",
+    "Invalid descriptor address index.",
+    "Invalid public derivation path",
+    "Only registered non-hardened address paths are supported",
+    "Path is not a registered Solana key",
+    "Path is outside registered public accounts",
+    "Path is outside the TRON address scheme of this wallet",
+    "The derivation path belongs to a different chain.",
+    "Unsupported derivation path."
+   ]
+  },
+  {
+   "code": "PERMISSION",
+   "sites": 10,
+   "files": [
+    "src/tron.js"
+   ],
+   "messages": [
+    "Account permission updates must use the current owner permission (ID 0).",
+    "Active permissions require a 32-byte operation mask.",
+    "Invalid key weight.",
+    "Invalid or duplicate permission keys.",
+    "Invalid or witness-only permission ID.",
+    "Invalid permission threshold.",
+    "New owner permission is required.",
+    "Permission type does not match its position.",
+    "Too many active permissions.",
+    "Unsupported permission parent."
+   ]
+  },
+  {
+   "code": "PLAN",
+   "sites": 4,
+   "files": [
+    "src/resolver.js"
+   ],
+   "messages": [
+    "A resolved signing plan is required",
+    "Invalid signing tasks",
+    "The signing task does not belong to this plan"
+   ]
+  },
+  {
+   "code": "POLICY",
+   "sites": 8,
+   "files": [
+    "src/bitcoin-policy.js",
+    "src/bitcoin.js"
+   ],
+   "messages": [
+    "Cosigner origin child does not match xpub.",
+    "Cosigner origin depth does not match xpub.",
+    "Cosigners must share network and branch shape.",
+    "Descriptor does not cover this branch.",
+    "Duplicate cosigner extended key.",
+    "Duplicate multisig public key.",
+    "Invalid multisig threshold.",
+    "Taproot leaves require 1–20 distinct public keys."
+   ]
+  },
+  {
+   "code": "PRECISION",
+   "sites": 1,
+   "files": [
+    "src/util.js"
+   ],
+   "messages": [
+    "Use decimal strings for amounts larger than safe integers."
+   ]
+  },
+  {
+   "code": "PREVOUT",
+   "sites": 1,
+   "files": [
+    "src/bitcoin.js"
+   ],
+   "messages": [
+    "Full previous transactions (nonWitnessUtxo) are required for legacy inputs: their signatures do not commit to input amounts."
+   ]
+  },
+  {
+   "code": "PROFILE",
+   "sites": 2,
+   "files": [
+    "src/public-index.js"
+   ],
+   "messages": [
+    "A cosigner key cannot define a multisig receive address",
+    "Unsupported Solana profile"
+   ]
+  },
+  {
+   "code": "PROTOBUF",
+   "sites": 6,
+   "files": [
+    "src/tron.js"
+   ],
+   "messages": [
+    "Duplicate protobuf field.",
+    "Invalid protobuf field tag.",
+    "Invalid protobuf varint.",
+    "Non-canonical protobuf integer.",
+    "Protobuf integer overflow.",
+    "Unexpected protobuf wire type."
+   ]
+  },
+  {
+   "code": "PUBLIC_INDEX",
+   "sites": 13,
+   "files": [
+    "src/public-index.js",
+    "src/resolver.js"
+   ],
+   "messages": [
+    "Cached TRON address does not match its public node",
+    "Duplicate Solana public key",
+    "Invalid Bitcoin public index",
+    "Invalid Solana preset key",
+    "Invalid Solana public index",
+    "Invalid TRON address index",
+    "Invalid TRON address scheme",
+    "Invalid cached Solana public key",
+    "Invalid public account origin",
+    "Invalid registered public node",
+    "Public node metadata does not match its extended key",
+    "Wallet setup required"
+   ]
+  },
+  {
+   "code": "QR_PROTOCOL",
+   "sites": 152,
+   "files": [
+    "protocols.js"
+   ],
+   "messages": [
+    "%1$s has invalid length",
+    "%1$s must be bytes",
+    "A plain-text QR code has one frame",
+    "Account xpub depth does not match path",
+    "Account xpub requires accountPath",
+    "Ambiguous UR field name",
+    "BBQR PSBT magic mismatch",
+    "BBQR decompressed payload exceeds supported size",
+    "CBOR array too large",
+    "CBOR complexity limit exceeded",
+    "CBOR integer exceeds exact numeric range",
+    "CBOR map too large",
+    "Conflicting BBQR fragment",
+    "Duplicate CBOR map key",
+    "Duplicate JSON key",
+    "Empty QR frame",
+    "Empty TRON signing data",
+    "Empty signing payload",
+    "Expected hexadecimal requestId",
+    "Expected hexadecimal string",
+    "File payload exceeds supported size",
+    "Fountain sequence exceeds limits",
+    "Incomplete wallet pairing QR",
+    "Inconsistent fountain fragment size",
+    "Indefinite or reserved CBOR encoding is unsupported",
+    "Invalid BBQR encoded data",
+    "Invalid BBQR fragment index",
+    "Invalid BBQR fragment length",
+    "Invalid Ethereum chain ID",
+    "Invalid JSON array",
+    "Invalid JSON object",
+    "Invalid JSON object key",
+    "Invalid JSON size limit",
+    "Invalid JSON value",
+    "Invalid PSBT magic",
+    "Invalid QR fragment length",
+    "Invalid QR frame count",
+    "Invalid TRON address prefix",
+    "Invalid UR frame",
+    "Invalid UTF-8",
+    "Invalid UTF-8 in wallet pairing",
+    "Invalid account depth",
+    "Invalid account derivation path",
+    "Invalid account path component",
+    "Invalid account path index",
+    "Invalid base64 bytes",
+    "Invalid crypto-keypath",
+    "Invalid export device name",
+    "Invalid fingerprint",
+    "Invalid fountain fragment",
+    "Invalid fountain fragment metadata",
+    "Invalid fountain sequence",
+    "Invalid hexadecimal bytes",
+    "Invalid origin",
+    "Invalid pairing address index",
+    "Invalid public key encoding",
+    "Invalid request UUID tag",
+    "Invalid signature size",
+    "Invalid signing path",
+    "Invalid typed data UTF-8",
+    "Invalid wallet pairing CBOR length",
+    "JSON complexity limit exceeded",
+    "JSON payload too large",
+    "Missing signing response",
+    "Mixed BBQR encodings or counts",
+    "Mixed UR fountain sessions",
+    "Mixed UR types",
+    "Multiple static QR payloads",
+    "Multiple unrelated QR payloads",
+    "No QR frames to describe",
+    "Nonfinal BBQR base32 fragment must end on a 5-byte boundary",
+    "Not a BitSigner wallet pairing",
+    "Not a ur:bytes wallet pairing",
+    "Only public extended keys may be exported",
+    "Oversized final BBQR fragment",
+    "Private key export is forbidden",
+    "QR frame size exceeds limits",
+    "QR payload exceeds supported size",
+    "QR scan memory limit exceeded",
+    "Sign request must be a CBOR map",
+    "Signing path must be concrete",
+    "Signing request differs from its original PSBT payload",
+    "Signing request differs from its original QR payload",
+    "The PSBT QR code does not decode to its own type",
+    "The exported QR code does not decode",
+    "The exported QR code has an unexpected type",
+    "Too many BBQR fragments",
+    "Too many QR fragments",
+    "Trailing CBOR data",
+    "Trailing JSON data",
+    "Trailing bytes after wallet pairing CBOR",
+    "Transaction data type does not match payload",
+    "Truncated CBOR",
+    "Truncated wallet pairing CBOR",
+    "UR checksum failure",
+    "Unequal BBQR fragment lengths",
+    "Unexpected byte length",
+    "Unsafe JSON number; encode large integers as strings",
+    "Unsupported BBQR header, file type, or alphabet",
+    "Unsupported Bitcoin export mode",
+    "Unsupported Bitcoin profile",
+    "Unsupported CBOR map key",
+    "Unsupported CBOR simple value",
+    "Unsupported CBOR type",
+    "Unsupported Ethereum signing data type",
+    "Unsupported QR output type",
+    "Unsupported Solana profile",
+    "Unsupported Solana signing type",
+    "Unsupported TRON signing data type",
+    "Unsupported export mode",
+    "Unsupported outgoing BBQR encoding",
+    "Unsupported pairing chain",
+    "Unsupported pairing value",
+    "Unsupported response CBOR value",
+    "Unsupported response profile",
+    "Unsupported signing QR format",
+    "Unsupported signing UR type",
+    "Unsupported signing request field",
+    "Unsupported wallet pairing mode",
+    "Unsupported wallet pairing version",
+    "Unterminated JSON string",
+    "Wallet pairing CBOR is too complex",
+    "Wallet pairing exports the standard TRON address scheme only",
+    "Wallet pairing has no accounts",
+    "Wallet pairing is not a map",
+    "Wallet pairing payload is too large for one QR code",
+    "requestId has invalid length",
+    "ur:bytes must hold a byte string"
+   ]
+  },
+  {
+   "code": "REQUEST",
+   "sites": 4,
+   "files": [
+    "src/index.js",
+    "src/resolver.js",
+    "src/util.js"
+   ],
+   "messages": [
+    "Expected a JSON operation.",
+    "Expected a plain JSON object.",
+    "Unsupported or missing chain.",
+    "Unsupported signing request"
+   ]
+  },
+  {
+   "code": "RESOURCE",
+   "sites": 3,
+   "files": [
+    "src/tron.js"
+   ],
+   "messages": [
+    "Invalid delegation lock.",
+    "Invalid resource delegation.",
+    "Unsupported resource type."
+   ]
+  },
+  {
+   "code": "RISK",
+   "sites": 1,
+   "files": [
+    "src/resolver.js"
+   ],
+   "messages": [
+    "Confirm this request’s decoding risks before signing"
+   ]
+  },
+  {
+   "code": "SAFE_SCHEMA",
+   "sites": 2,
+   "files": [
+    "src/evm.js"
+   ],
+   "messages": [
+    "Invalid Safe operation.",
+    "Unexpected SafeTx field definitions."
+   ]
+  },
+  {
+   "code": "SCAN",
+   "sites": 1,
+   "files": [
+    "src/index.js"
+   ],
+   "messages": [
+    "No scan session is active."
+   ]
+  },
+  {
+   "code": "SEED",
+   "sites": 3,
+   "files": [
+    "src/keys.js",
+    "src/public-index.js"
+   ],
+   "messages": [
+    "Invalid wallet seed.",
+    "Provide either a seed or a recovery phrase, not both.",
+    "Provide either a seed or recovery phrase, or a public index."
+   ]
+  },
+  {
+   "code": "SIGHASH",
+   "sites": 3,
+   "files": [
+    "src/bitcoin.js"
+   ],
+   "messages": [
+    "Only SIGHASH_ALL or Taproot SIGHASH_DEFAULT is accepted.",
+    "SIGHASH_DEFAULT is valid only for Taproot.",
+    "Unsupported existing Taproot signature sighash."
+   ]
+  },
+  {
+   "code": "SIGNATURE",
+   "sites": 23,
+   "files": [
+    "src/bitcoin.js",
+    "src/evm.js",
+    "src/solana.js",
+    "src/tron.js"
+   ],
+   "messages": [
+    "Bitcoin signing failed.",
+    "Duplicate TRON signer.",
+    "Existing Bitcoin signature has an unsupported sighash or unrelated key.",
+    "Existing Bitcoin signature is invalid.",
+    "Existing Solana signature is invalid for its signer slot.",
+    "Existing TRON signature cannot be verified.",
+    "Existing Taproot key-path signature is invalid.",
+    "Existing Taproot script signature is invalid.",
+    "Existing Taproot signature does not match a supported committed leaf.",
+    "Invalid Solana signature size.",
+    "Invalid TRON signature.",
+    "Invalid existing TRON signature.",
+    "Invalid signature array.",
+    "Signature verification failed.",
+    "Solana signature slot count differs from the message header.",
+    "Taproot key-path signature already exists.",
+    "This Solana signer slot is already populated.",
+    "This Taproot leaf already has the signer signature.",
+    "This input already has the signer signature.",
+    "This ownership check is already signed.",
+    "This wallet has already signed the transaction."
+   ]
+  },
+  {
+   "code": "SIGNER",
+   "sites": 30,
+   "files": [
+    "src/bitcoin.js",
+    "src/evm.js",
+    "src/resolver.js",
+    "src/solana.js",
+    "src/tron.js"
+   ],
+   "messages": [
+    "A Solana task requires one signer.",
+    "A TRON task requires one signer.",
+    "An EVM task requires one signer.",
+    "An empty Taproot leaf-hash list identifies key-path signing only.",
+    "An ownership check needs the address it proves.",
+    "Decrypted public key differs from the approved key",
+    "EVM task address mismatch.",
+    "EVM task key differs from the decrypted wallet.",
+    "Invalid Solana signer address",
+    "Invalid TRON signer address",
+    "Invalid master fingerprint",
+    "Invalid signer address",
+    "Invalid signer public key",
+    "Invalid signing input index.",
+    "No supported Taproot leaf belongs to this signing task.",
+    "No unsigned input belongs to this signing task.",
+    "No unsigned input belongs to this wallet. Correct derivation metadata or a matched signing task is required.",
+    "Owner multisig requires an explicit matched signer.",
+    "Requested Solana signer does not match this wallet.",
+    "Requested TRON signer does not match this wallet.",
+    "Requested signer does not match this wallet.",
+    "Signing key does not satisfy the committed input script.",
+    "Signing task public key does not match the decrypted wallet.",
+    "Solana signer slot differs from the signing task.",
+    "Solana task address mismatch.",
+    "Solana task key differs from the decrypted wallet.",
+    "TRON task public key differs from the decrypted wallet.",
+    "The decrypted wallet does not match the signing plan",
+    "This wallet is not a required signer in the transaction.",
+    "Transaction sender does not match this wallet."
+   ]
+  },
+  {
+   "code": "TOKEN_METADATA",
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ],
+   "messages": [
+    "Instruction decimals disagree with the local registry for this mint."
+   ]
+  },
+  {
+   "code": "TRANSACTION",
+   "sites": 10,
+   "files": [
+    "src/evm.js",
+    "src/tron.js"
+   ],
+   "messages": [
+    "Chain ID, nonce and gas limit are required.",
+    "EVM transaction is already signed.",
+    "Invalid TRON reference block.",
+    "Invalid TRON timestamp or expiration.",
+    "Invalid transaction sender.",
+    "Missing EVM transaction.",
+    "Missing TRON raw_data_hex.",
+    "Missing TRON transaction.",
+    "Transaction sender has an invalid checksum.",
+    "Unsupported EVM transaction field."
+   ]
+  },
+  {
+   "code": "TRUNCATED",
+   "sites": 1,
+   "files": [
+    "src/util.js"
+   ],
+   "messages": [
+    "Truncated transaction."
+   ]
+  },
+  {
+   "code": "TYPED_DATA",
+   "sites": 24,
+   "files": [
+    "src/evm.js"
+   ],
+   "messages": [
+    "Duplicate EIP-712 field name.",
+    "EIP-712 primary type is inconsistent.",
+    "EIP-712 primary type is not defined.",
+    "Expected a typed struct.",
+    "Incomplete EIP-712 request.",
+    "Invalid EIP-712 field definition.",
+    "Invalid EIP-712 type definition.",
+    "Invalid typed array length.",
+    "Invalid typed string.",
+    "The declared EIP-712 domain type does not match the domain values.",
+    "Typed %1$s must be exactly %2$s bytes.",
+    "Typed address has an invalid checksum.",
+    "Typed addresses must be 0x-prefixed 20-byte hex.",
+    "Typed bool values must be true or false.",
+    "Typed bytes must be 0x-prefixed hex.",
+    "Typed integers must be decimal strings, 0x hex strings or safe integers.",
+    "Typed message has extra unsigned or missing fields.",
+    "Typed value is outside the %1$s range.",
+    "Unsupported EIP-712 domain field.",
+    "Unsupported fixed bytes type.",
+    "Unsupported integer type.",
+    "Unsupported typed data type: %1$s",
+    "Use strings for large typed integers."
+   ]
+  },
+  {
+   "code": "UNSUPPORTED",
+   "sites": 15,
+   "files": [
+    "src/bitcoin.js",
+    "src/evm.js",
+    "src/solana.js",
+    "src/tron.js"
+   ],
+   "messages": [
+    "Exactly one TRON contract is supported per transaction.",
+    "Only EVM legacy, EIP-2930 and EIP-1559 transactions are supported.",
+    "Only legacy and version 0 Solana messages are supported.",
+    "TRC10 value in a smart contract call is unsupported.",
+    "Unknown TRON protobuf field; signing is disabled.",
+    "Unsupported Bitcoin output script.",
+    "Unsupported EVM request kind.",
+    "Unsupported Solana request kind.",
+    "Unsupported TRON contract type. Its signed structure cannot be safely parsed.",
+    "Unsupported TRON signing protocol.",
+    "Unsupported associated token account instruction.",
+    "Unsupported compute budget instruction.",
+    "Unsupported signing protocol: only CHECKSIG/CHECKSIGVERIFY and CHECKSIGADD threshold leaves are supported.",
+    "Unsupported signing protocol: unknown Bitcoin input script.",
+    "Unsupported signing protocol: unknown Taproot leaf version."
+   ]
+  },
+  {
+   "code": "WALLET",
+   "sites": 2,
+   "files": [
+    "src/resolver.js"
+   ],
+   "messages": [
+    "Duplicate local wallet identifier",
+    "Invalid local wallet identifier"
+   ]
+  }
+ ],
+ "planStatuses": [
+  {
+   "status": "ready",
+   "message": null
+  },
+  {
+   "status": "noMatch",
+   "message": "No matching wallet"
+  },
+  {
+   "status": "missingSigner",
+   "message": "Missing signer information"
+  },
+  {
+   "status": "ambiguous",
+   "message": "Ambiguous wallet match"
+  },
+  {
+   "status": "setupRequired",
+   "message": "Wallet setup required"
+  },
+  {
+   "status": "invalid",
+   "message": "Invalid signing request"
+  }
+ ],
+ "decodeStatuses": [
+  "fullyDecoded",
+  "partiallyDecoded",
+  "opaque"
+ ],
+ "riskLevels": [
+  "normal",
+  "warning",
+  "high"
+ ],
+ "actions": [
+  {
+   "id": "send",
+   "text": "Send",
+   "seen": true
+  },
+  {
+   "id": "consolidate",
+   "text": "Consolidate",
+   "seen": true
+  },
+  {
+   "id": "approve",
+   "text": "Approve (NFT or token)",
+   "seen": false
+  },
+  {
+   "id": "approveAllNfts",
+   "text": "Approve All NFTs",
+   "seen": false
+  },
+  {
+   "id": "batch",
+   "text": "Batch Transaction",
+   "seen": false
+  },
+  {
+   "id": "blurBulkListing",
+   "text": "Blur Bulk Listing (blind)",
+   "seen": false
+  },
+  {
+   "id": "clearNftApproval",
+   "text": "Clear NFT Approval (if ERC-721)",
+   "seen": false
+  },
+  {
+   "id": "contractCall",
+   "text": "Contract Interaction",
+   "seen": true
+  },
+  {
+   "id": "deploy",
+   "text": "Deploy Contract",
+   "seen": false
+  },
+  {
+   "id": "permit",
+   "text": "Permit Spending",
+   "seen": true
+  },
+  {
+   "id": "revokeNftApproval",
+   "text": "Revoke NFT Approval",
+   "seen": false
+  },
+  {
+   "id": "sendErc1155Batch",
+   "text": "Send ERC-1155 Batch",
+   "seen": false
+  },
+  {
+   "id": "sendErc1155",
+   "text": "Send ERC-1155 Token",
+   "seen": false
+  },
+  {
+   "id": "sendNft",
+   "text": "Send NFT",
+   "seen": false
+  },
+  {
+   "id": "signMessage",
+   "text": "Sign Message",
+   "seen": true
+  },
+  {
+   "id": "signTypedData",
+   "text": "Sign Typed Data",
+   "seen": true
+  },
+  {
+   "id": "transfer",
+   "text": "Transfer",
+   "seen": false
+  },
+  {
+   "id": "transferNftOrToken",
+   "text": "Transfer (NFT or token)",
+   "seen": false
+  },
+  {
+   "id": "sendCoreNft",
+   "text": "Send Core NFT",
+   "seen": false
+  },
+  {
+   "id": "sendTokenLikelyNft",
+   "text": "Send Token (likely NFT)",
+   "seen": false
+  },
+  {
+   "id": "sendCompressedNft",
+   "text": "Send compressed NFT",
+   "seen": false
+  },
+  {
+   "id": "signTransaction",
+   "text": "Sign Transaction",
+   "seen": true
+  },
+  {
+   "id": "updatePermissions",
+   "text": "Update Permissions",
+   "seen": false
+  },
+  {
+   "id": "approveSpending",
+   "text": "Approve Spending",
+   "seen": true
+  },
+  {
+   "id": "revokeApproval",
+   "text": "Revoke Approval",
+   "seen": false
+  },
+  {
+   "id": "verifyOwnership",
+   "text": "Verify Ownership",
+   "seen": true
+  }
+ ],
+ "actionPrefixes": [
+  "Safe: "
+ ],
+ "otherActionsSeen": [
+  "Transfer SOL"
+ ],
+ "titles": [
+  {
+   "text": "Add Safe owner",
+   "pattern": "^Add Safe owner$",
+   "placeholders": 0
+  },
+  {
+   "text": "Approve a Safe transaction",
+   "pattern": "^Approve a Safe transaction$",
+   "placeholders": 0
+  },
+  {
+   "text": "Approve token spending",
+   "pattern": "^Approve token spending$",
+   "placeholders": 0
+  },
+  {
+   "text": "Authorize collection spending",
+   "pattern": "^Authorize collection spending$",
+   "placeholders": 0
+  },
+  {
+   "text": "Authorize token spending",
+   "pattern": "^Authorize token spending$",
+   "placeholders": 0
+  },
+  {
+   "text": "Change Safe threshold",
+   "pattern": "^Change Safe threshold$",
+   "placeholders": 0
+  },
+  {
+   "text": "Disable Safe module",
+   "pattern": "^Disable Safe module$",
+   "placeholders": 0
+  },
+  {
+   "text": "Enable Safe module",
+   "pattern": "^Enable Safe module$",
+   "placeholders": 0
+  },
+  {
+   "text": "Execute Safe transaction",
+   "pattern": "^Execute Safe transaction$",
+   "placeholders": 0
+  },
+  {
+   "text": "Execute transaction batch",
+   "pattern": "^Execute transaction batch$",
+   "placeholders": 0
+  },
+  {
+   "text": "Native transfer",
+   "pattern": "^Native transfer$",
+   "placeholders": 0
+  },
+  {
+   "text": "Remove Safe owner",
+   "pattern": "^Remove Safe owner$",
+   "placeholders": 0
+  },
+  {
+   "text": "Replace Safe owner",
+   "pattern": "^Replace Safe owner$",
+   "placeholders": 0
+  },
+  {
+   "text": "Set Safe fallback handler",
+   "pattern": "^Set Safe fallback handler$",
+   "placeholders": 0
+  },
+  {
+   "text": "Set Safe guard",
+   "pattern": "^Set Safe guard$",
+   "placeholders": 0
+  },
+  {
+   "text": "Sign Bitcoin transaction",
+   "pattern": "^Sign Bitcoin transaction$",
+   "placeholders": 0
+  },
+  {
+   "text": "Sign Ethereum message",
+   "pattern": "^Sign Ethereum message$",
+   "placeholders": 0
+  },
+  {
+   "text": "Sign Solana message",
+   "pattern": "^Sign Solana message$",
+   "placeholders": 0
+  },
+  {
+   "text": "Sign Solana transaction",
+   "pattern": "^Sign Solana transaction$",
+   "placeholders": 0
+  },
+  {
+   "text": "Sign TRON message",
+   "pattern": "^Sign TRON message$",
+   "placeholders": 0
+  },
+  {
+   "text": "Sign typed data",
+   "pattern": "^Sign typed data$",
+   "placeholders": 0
+  },
+  {
+   "text": "TRON Transfer tokens",
+   "pattern": "^TRON Transfer tokens$",
+   "placeholders": 0
+  },
+  {
+   "text": "TRX transfer",
+   "pattern": "^TRX transfer$",
+   "placeholders": 0
+  },
+  {
+   "text": "Transfer NFT",
+   "pattern": "^Transfer NFT$",
+   "placeholders": 0
+  },
+  {
+   "text": "Transfer NFT batch",
+   "pattern": "^Transfer NFT batch$",
+   "placeholders": 0
+  },
+  {
+   "text": "Transfer assets",
+   "pattern": "^Transfer assets$",
+   "placeholders": 0
+  },
+  {
+   "text": "Transfer tokens",
+   "pattern": "^Transfer tokens$",
+   "placeholders": 0
+  },
+  {
+   "text": "Unknown contract call",
+   "pattern": "^Unknown contract call$",
+   "placeholders": 0
+  },
+  {
+   "text": "Verify wallet ownership",
+   "pattern": "^Verify wallet ownership$",
+   "placeholders": 0
+  }
+ ],
+ "labels": [
+  {
+   "text": "Network",
+   "pattern": "^Network$",
+   "placeholders": 0,
+   "hits": 78,
+   "sites": 5
+  },
+  {
+   "text": "Input %1$s",
+   "pattern": "^Input ([\\s\\S]+?)$",
+   "placeholders": 1,
+   "hits": 72,
+   "sites": 1
+  },
+  {
+   "text": "Input %1$s sighash",
+   "pattern": "^Input ([\\s\\S]+?) sighash$",
+   "placeholders": 1,
+   "hits": 72,
+   "sites": 1
+  },
+  {
+   "text": "Network context",
+   "pattern": "^Network context$",
+   "placeholders": 0,
+   "hits": 71,
+   "sites": 5
+  },
+  {
+   "text": "Output %1$s",
+   "pattern": "^Output ([\\s\\S]+?)$",
+   "placeholders": 1,
+   "hits": 56,
+   "sites": 1
+  },
+  {
+   "text": "Inputs",
+   "pattern": "^Inputs$",
+   "placeholders": 0,
+   "hits": 44,
+   "sites": 1
+  },
+  {
+   "text": "Locktime",
+   "pattern": "^Locktime$",
+   "placeholders": 0,
+   "hits": 44,
+   "sites": 1
+  },
+  {
+   "text": "Network fee",
+   "pattern": "^Network fee$",
+   "placeholders": 0,
+   "hits": 44,
+   "sites": 1
+  },
+  {
+   "text": "Total output",
+   "pattern": "^Total output$",
+   "placeholders": 0,
+   "hits": 44,
+   "sites": 1
+  },
+  {
+   "text": "Derivation path",
+   "pattern": "^Derivation path$",
+   "placeholders": 0,
+   "hits": 41,
+   "sites": 3
+  },
+  {
+   "text": "Requested signer",
+   "pattern": "^Requested signer$",
+   "placeholders": 0,
+   "hits": 39,
+   "sites": 4
+  },
+  {
+   "text": "Instruction %1$s · %2$s",
+   "pattern": "^Instruction ([\\s\\S]+?) · ([\\s\\S]+?)$",
+   "placeholders": 2,
+   "hits": 38,
+   "sites": 1
+  },
+  {
+   "text": "Native amount (wei)",
+   "pattern": "^Native amount \\(wei\\)$",
+   "placeholders": 0,
+   "hits": 15,
+   "sites": 1
+  },
+  {
+   "text": "Recipient / contract",
+   "pattern": "^Recipient / contract$",
+   "placeholders": 0,
+   "hits": 15,
+   "sites": 1
+  },
+  {
+   "text": "Chain ID",
+   "pattern": "^Chain ID$",
+   "placeholders": 0,
+   "hits": 14,
+   "sites": 1
+  },
+  {
+   "text": "Gas limit",
+   "pattern": "^Gas limit$",
+   "placeholders": 0,
+   "hits": 14,
+   "sites": 1
+  },
+  {
+   "text": "Maximum gas price (wei)",
+   "pattern": "^Maximum gas price \\(wei\\)$",
+   "placeholders": 0,
+   "hits": 14,
+   "sites": 1
+  },
+  {
+   "text": "Maximum network fee (%1$s)",
+   "pattern": "^Maximum network fee \\(([\\s\\S]+?)\\)$",
+   "placeholders": 1,
+   "hits": 14,
+   "sites": 1
+  },
+  {
+   "text": "Message",
+   "pattern": "^Message$",
+   "placeholders": 0,
+   "hits": 14,
+   "sites": 3
+  },
+  {
+   "text": "Nonce",
+   "pattern": "^Nonce$",
+   "placeholders": 0,
+   "hits": 14,
+   "sites": 3
+  },
+  {
+   "text": "Transaction type",
+   "pattern": "^Transaction type$",
+   "placeholders": 0,
+   "hits": 14,
+   "sites": 1
+  },
+  {
+   "text": "Account",
+   "pattern": "^Account$",
+   "placeholders": 0,
+   "hits": 13,
+   "sites": 4
+  },
+  {
+   "text": "Recipient",
+   "pattern": "^Recipient$",
+   "placeholders": 0,
+   "hits": 13,
+   "sites": 8
+  },
+  {
+   "text": "Expiration (UTC)",
+   "pattern": "^Expiration \\(UTC\\)$",
+   "placeholders": 0,
+   "hits": 11,
+   "sites": 1
+  },
+  {
+   "text": "Maximum energy fee (TRX)",
+   "pattern": "^Maximum energy fee \\(TRX\\)$",
+   "placeholders": 0,
+   "hits": 11,
+   "sites": 1
+  },
+  {
+   "text": "Native amount (%1$s)",
+   "pattern": "^Native amount \\(([\\s\\S]+?)\\)$",
+   "placeholders": 1,
+   "hits": 11,
+   "sites": 1
+  },
+  {
+   "text": "Permission ID",
+   "pattern": "^Permission ID$",
+   "placeholders": 0,
+   "hits": 11,
+   "sites": 1
+  },
+  {
+   "text": "Transaction ID",
+   "pattern": "^Transaction ID$",
+   "placeholders": 0,
+   "hits": 11,
+   "sites": 1
+  },
+  {
+   "text": "Amount (TRX)",
+   "pattern": "^Amount \\(TRX\\)$",
+   "placeholders": 0,
+   "hits": 8,
+   "sites": 2
+  },
+  {
+   "text": "Exact bytes",
+   "pattern": "^Exact bytes$",
+   "placeholders": 0,
+   "hits": 7,
+   "sites": 2
+  },
+  {
+   "text": "Exact calldata",
+   "pattern": "^Exact calldata$",
+   "placeholders": 0,
+   "hits": 7,
+   "sites": 2
+  },
+  {
+   "text": "Exact message bytes",
+   "pattern": "^Exact message bytes$",
+   "placeholders": 0,
+   "hits": 7,
+   "sites": 1
+  },
+  {
+   "text": "Output %1$s ownership",
+   "pattern": "^Output ([\\s\\S]+?) ownership$",
+   "placeholders": 1,
+   "hits": 7,
+   "sites": 1
+  },
+  {
+   "text": "Base network fee (SOL)",
+   "pattern": "^Base network fee \\(SOL\\)$",
+   "placeholders": 0,
+   "hits": 6,
+   "sites": 1
+  },
+  {
+   "text": "Fee payer",
+   "pattern": "^Fee payer$",
+   "placeholders": 0,
+   "hits": 6,
+   "sites": 1
+  },
+  {
+   "text": "Maximum priority fee (SOL)",
+   "pattern": "^Maximum priority fee \\(SOL\\)$",
+   "placeholders": 0,
+   "hits": 6,
+   "sites": 1
+  },
+  {
+   "text": "Message version",
+   "pattern": "^Message version$",
+   "placeholders": 0,
+   "hits": 6,
+   "sites": 1
+  },
+  {
+   "text": "Method",
+   "pattern": "^Method$",
+   "placeholders": 0,
+   "hits": 6,
+   "sites": 1
+  },
+  {
+   "text": "Recent blockhash / durable nonce",
+   "pattern": "^Recent blockhash / durable nonce$",
+   "placeholders": 0,
+   "hits": 6,
+   "sites": 1
+  },
+  {
+   "text": "Required signers",
+   "pattern": "^Required signers$",
+   "placeholders": 0,
+   "hits": 6,
+   "sites": 1
+  },
+  {
+   "text": "Amount (%1$s)",
+   "pattern": "^Amount \\(([\\s\\S]+?)\\)$",
+   "placeholders": 1,
+   "hits": 5,
+   "sites": 2
+  },
+  {
+   "text": "Asset",
+   "pattern": "^Asset$",
+   "placeholders": 0,
+   "hits": 5,
+   "sites": 3
+  },
+  {
+   "text": "Decimals (local registry)",
+   "pattern": "^Decimals \\(local registry\\)$",
+   "placeholders": 0,
+   "hits": 5,
+   "sites": 1
+  },
+  {
+   "text": "Token amount (raw units)",
+   "pattern": "^Token amount \\(raw units\\)$",
+   "placeholders": 0,
+   "hits": 5,
+   "sites": 1
+  },
+  {
+   "text": "Attached TRX",
+   "pattern": "^Attached TRX$",
+   "placeholders": 0,
+   "hits": 3,
+   "sites": 1
+  },
+  {
+   "text": "Contract",
+   "pattern": "^Contract$",
+   "placeholders": 0,
+   "hits": 3,
+   "sites": 1
+  },
+  {
+   "text": "Domain",
+   "pattern": "^Domain$",
+   "placeholders": 0,
+   "hits": 3,
+   "sites": 1
+  },
+  {
+   "text": "Field definitions",
+   "pattern": "^Field definitions$",
+   "placeholders": 0,
+   "hits": 3,
+   "sites": 1
+  },
+  {
+   "text": "Primary type",
+   "pattern": "^Primary type$",
+   "placeholders": 0,
+   "hits": 3,
+   "sites": 1
+  },
+  {
+   "text": "Signed values",
+   "pattern": "^Signed values$",
+   "placeholders": 0,
+   "hits": 3,
+   "sites": 1
+  },
+  {
+   "text": "Signed data",
+   "pattern": "^Signed data$",
+   "placeholders": 0,
+   "hits": 2,
+   "sites": 1
+  },
+  {
+   "text": "Spender",
+   "pattern": "^Spender$",
+   "placeholders": 0,
+   "hits": 2,
+   "sites": 2
+  },
+  {
+   "text": "Token %1$s %2$s",
+   "pattern": "^Token ([\\s\\S]+?) ([\\s\\S]+?)$",
+   "placeholders": 2,
+   "hits": 2,
+   "sites": 1
+  },
+  {
+   "text": "Allowance / NFT token ID",
+   "pattern": "^Allowance / NFT token ID$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1
+  },
+  {
+   "text": "Function selector",
+   "pattern": "^Function selector$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1
+  },
+  {
+   "text": "Input %1$s multisig",
+   "pattern": "^Input ([\\s\\S]+?) multisig$",
+   "placeholders": 1,
+   "hits": 1,
+   "sites": 1
+  },
+  {
+   "text": "Refund base gas",
+   "pattern": "^Refund base gas$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1
+  },
+  {
+   "text": "Refund gas price",
+   "pattern": "^Refund gas price$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1
+  },
+  {
+   "text": "Refund receiver",
+   "pattern": "^Refund receiver$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1
+  },
+  {
+   "text": "Refund token",
+   "pattern": "^Refund token$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1
+  },
+  {
+   "text": "Safe address",
+   "pattern": "^Safe address$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1
+  },
+  {
+   "text": "Safe nonce",
+   "pattern": "^Safe nonce$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1
+  },
+  {
+   "text": "Safe operation",
+   "pattern": "^Safe operation$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 2
+  },
+  {
+   "text": "Safe transaction gas",
+   "pattern": "^Safe transaction gas$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1
+  },
+  {
+   "text": "Token %1$s",
+   "pattern": "^Token ([\\s\\S]+?)$",
+   "placeholders": 1,
+   "hits": 1,
+   "sites": 1
+  },
+  {
+   "text": "Token %1$s allowance (raw units)",
+   "pattern": "^Token ([\\s\\S]+?) allowance \\(raw units\\)$",
+   "placeholders": 1,
+   "hits": 1,
+   "sites": 1
+  },
+  {
+   "text": "sigDeadline",
+   "pattern": "^sigDeadline$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 0
+  },
+  {
+   "text": "%1$s · Item %2$s",
+   "pattern": "^([\\s\\S]+?) · Item ([\\s\\S]+?)$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sAdditional parameters",
+   "pattern": "^([\\s\\S]+?)Additional parameters$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sCollection",
+   "pattern": "^([\\s\\S]+?)Collection$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sCollection type",
+   "pattern": "^([\\s\\S]+?)Collection type$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sConduit key",
+   "pattern": "^([\\s\\S]+?)Conduit key$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sCounter",
+   "pattern": "^([\\s\\S]+?)Counter$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sCurrency",
+   "pattern": "^([\\s\\S]+?)Currency$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sExpires (UTC)",
+   "pattern": "^([\\s\\S]+?)Expires \\(UTC\\)$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "%1$sItems",
+   "pattern": "^([\\s\\S]+?)Items$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sNonces (global / subset / order)",
+   "pattern": "^([\\s\\S]+?)Nonces \\(global / subset / order\\)$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sOfferer",
+   "pattern": "^([\\s\\S]+?)Offerer$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sOrder type",
+   "pattern": "^([\\s\\S]+?)Order type$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sPrice",
+   "pattern": "^([\\s\\S]+?)Price$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sPrice note",
+   "pattern": "^([\\s\\S]+?)Price note$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sSalt",
+   "pattern": "^([\\s\\S]+?)Salt$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sSide",
+   "pattern": "^([\\s\\S]+?)Side$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sSigner",
+   "pattern": "^([\\s\\S]+?)Signer$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sStarts (UTC)",
+   "pattern": "^([\\s\\S]+?)Starts \\(UTC\\)$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "%1$sStrategy",
+   "pattern": "^([\\s\\S]+?)Strategy$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sToken ID",
+   "pattern": "^([\\s\\S]+?)Token ID$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sToken ID (hex)",
+   "pattern": "^([\\s\\S]+?)Token ID \\(hex\\)$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sYou give · Item %2$s",
+   "pattern": "^([\\s\\S]+?)You give · Item ([\\s\\S]+?)$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sZone",
+   "pattern": "^([\\s\\S]+?)Zone$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "%1$sZone hash",
+   "pattern": "^([\\s\\S]+?)Zone hash$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Access list",
+   "pattern": "^Access list$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Account / mint",
+   "pattern": "^Account / mint$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Account owner program",
+   "pattern": "^Account owner program$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Accounts",
+   "pattern": "^Accounts$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Action",
+   "pattern": "^Action$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 25
+  },
+  {
+   "text": "Additional accounts (plugin adapters)",
+   "pattern": "^Additional accounts \\(plugin adapters\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Additional authority / extension accounts",
+   "pattern": "^Additional authority / extension accounts$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 3
+  },
+  {
+   "text": "Additional authority accounts",
+   "pattern": "^Additional authority accounts$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Allocated bytes",
+   "pattern": "^Allocated bytes$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Allowance (%1$s)",
+   "pattern": "^Allowance \\(([\\s\\S]+?)\\)$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Allowance (raw units)",
+   "pattern": "^Allowance \\(raw units\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Amount (SOL)",
+   "pattern": "^Amount \\(SOL\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 3
+  },
+  {
+   "text": "Amount / NFT token ID",
+   "pattern": "^Amount / NFT token ID$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Approve all assets",
+   "pattern": "^Approve all assets$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Asset ID",
+   "pattern": "^Asset ID$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Asset ID (derived from tree and nonce)",
+   "pattern": "^Asset ID \\(derived from tree and nonce\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 3
+  },
+  {
+   "text": "Asset data hash",
+   "pattern": "^Asset data hash$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Asset owner",
+   "pattern": "^Asset owner$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 4
+  },
+  {
+   "text": "Asset type",
+   "pattern": "^Asset type$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 4
+  },
+  {
+   "text": "Authority",
+   "pattern": "^Authority$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 3
+  },
+  {
+   "text": "Authority (delegate or freeze authority)",
+   "pattern": "^Authority \\(delegate or freeze authority\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Authority (owner or delegate)",
+   "pattern": "^Authority \\(owner or delegate\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Authority (owner or update authority)",
+   "pattern": "^Authority \\(owner or update authority\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Authority type",
+   "pattern": "^Authority type$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Authorization data (not decoded)",
+   "pattern": "^Authorization data \\(not decoded\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 3
+  },
+  {
+   "text": "Batch order",
+   "pattern": "^Batch order$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Bubblegum transfer fee (SOL)",
+   "pattern": "^Bubblegum transfer fee \\(SOL\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Bulk order",
+   "pattern": "^Bulk order$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Bytes",
+   "pattern": "^Bytes$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Call %1$s operation",
+   "pattern": "^Call ([\\s\\S]+?) operation$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Call %1$s: %2$s",
+   "pattern": "^Call ([\\s\\S]+?): ([\\s\\S]+?)$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Collection",
+   "pattern": "^Collection$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "Collection metadata",
+   "pattern": "^Collection metadata$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "Compute unit limit",
+   "pattern": "^Compute unit limit$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Compute unit price (micro-lamports)",
+   "pattern": "^Compute unit price \\(micro-lamports\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Core collection",
+   "pattern": "^Core collection$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Creator hash",
+   "pattern": "^Creator hash$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Current authority",
+   "pattern": "^Current authority$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Current voting member",
+   "pattern": "^Current voting member$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Data hash",
+   "pattern": "^Data hash$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Decimals bound by instruction",
+   "pattern": "^Decimals bound by instruction$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Delegate",
+   "pattern": "^Delegate$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "Delegate type",
+   "pattern": "^Delegate type$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Delegated amount (raw units)",
+   "pattern": "^Delegated amount \\(raw units\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Delegated balance (TRX)",
+   "pattern": "^Delegated balance \\(TRX\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Deployment bytecode",
+   "pattern": "^Deployment bytecode$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Destination account type",
+   "pattern": "^Destination account type$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Destination stake",
+   "pattern": "^Destination stake$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Destination token account",
+   "pattern": "^Destination token account$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 3
+  },
+  {
+   "text": "Display amount",
+   "pattern": "^Display amount$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Distinct token IDs",
+   "pattern": "^Distinct token IDs$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Edition account",
+   "pattern": "^Edition account$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "Exact instruction bytes",
+   "pattern": "^Exact instruction bytes$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Existing signatures",
+   "pattern": "^Existing signatures$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Existing signers",
+   "pattern": "^Existing signers$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Expires (UTC)",
+   "pattern": "^Expires \\(UTC\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Flags",
+   "pattern": "^Flags$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "From (leaf owner)",
+   "pattern": "^From \\(leaf owner\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "From wallet (token owner)",
+   "pattern": "^From wallet \\(token owner\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Funding (SOL)",
+   "pattern": "^Funding \\(SOL\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Hook extra accounts",
+   "pattern": "^Hook extra accounts$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Hook validation account",
+   "pattern": "^Hook validation account$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Ignored request keys",
+   "pattern": "^Ignored request keys$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Input %1$s Taproot leaf",
+   "pattern": "^Input ([\\s\\S]+?) Taproot leaf$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Instruction",
+   "pattern": "^Instruction$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Interpretation",
+   "pattern": "^Interpretation$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 3
+  },
+  {
+   "text": "Items",
+   "pattern": "^Items$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Known contract (Ethereum)",
+   "pattern": "^Known contract \\(Ethereum\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Leaf delegate",
+   "pattern": "^Leaf delegate$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "Leaf index",
+   "pattern": "^Leaf index$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Leaf owner",
+   "pattern": "^Leaf owner$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Listings root",
+   "pattern": "^Listings root$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Lock period (blocks)",
+   "pattern": "^Lock period \\(blocks\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Locked",
+   "pattern": "^Locked$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Locked address (stored, not enforced)",
+   "pattern": "^Locked address \\(stored, not enforced\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Maker fee",
+   "pattern": "^Maker fee$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Marketplace",
+   "pattern": "^Marketplace$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 4
+  },
+  {
+   "text": "Master edition",
+   "pattern": "^Master edition$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Memo",
+   "pattern": "^Memo$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "Memo (hex)",
+   "pattern": "^Memo \\(hex\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Merkle root",
+   "pattern": "^Merkle root$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "Merkle tree",
+   "pattern": "^Merkle tree$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Mint",
+   "pattern": "^Mint$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 9
+  },
+  {
+   "text": "Multisig account",
+   "pattern": "^Multisig account$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Multisig signers",
+   "pattern": "^Multisig signers$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 4
+  },
+  {
+   "text": "New %1$s allowed operations (bit mask)",
+   "pattern": "^New ([\\s\\S]+?) allowed operations \\(bit mask\\)$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "New %1$s members",
+   "pattern": "^New ([\\s\\S]+?) members$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "New %1$s permission ID",
+   "pattern": "^New ([\\s\\S]+?) permission ID$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "New %1$s threshold",
+   "pattern": "^New ([\\s\\S]+?) threshold$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "New account",
+   "pattern": "^New account$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "New authority",
+   "pattern": "^New authority$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "New delegate",
+   "pattern": "^New delegate$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "New owner",
+   "pattern": "^New owner$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 3
+  },
+  {
+   "text": "New owner program",
+   "pattern": "^New owner program$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "New permission configuration",
+   "pattern": "^New permission configuration$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Nonce account",
+   "pattern": "^Nonce account$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Nonce authority",
+   "pattern": "^Nonce authority$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Number of listings (as signed)",
+   "pattern": "^Number of listings \\(as signed\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Operator",
+   "pattern": "^Operator$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Order side",
+   "pattern": "^Order side$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Owner",
+   "pattern": "^Owner$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "Owner / authority",
+   "pattern": "^Owner / authority$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Payer",
+   "pattern": "^Payer$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 7
+  },
+  {
+   "text": "Previous delegate",
+   "pattern": "^Previous delegate$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Program",
+   "pattern": "^Program$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Program name",
+   "pattern": "^Program name$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Proof accounts",
+   "pattern": "^Proof accounts$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Quantity",
+   "pattern": "^Quantity$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Raw amount",
+   "pattern": "^Raw amount$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 3
+  },
+  {
+   "text": "Receiver",
+   "pattern": "^Receiver$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Receiver callback bytes",
+   "pattern": "^Receiver callback bytes$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 3
+  },
+  {
+   "text": "Recipient wallet (owner of destination token account)",
+   "pattern": "^Recipient wallet \\(owner of destination token account\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Referenced proposal",
+   "pattern": "^Referenced proposal$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Rent payer",
+   "pattern": "^Rent payer$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Rent recipient",
+   "pattern": "^Rent recipient$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Resource",
+   "pattern": "^Resource$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "Rule set",
+   "pattern": "^Rule set$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Safe: %1$s",
+   "pattern": "^Safe: ([\\s\\S]+?)$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Salt",
+   "pattern": "^Salt$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Sender",
+   "pattern": "^Sender$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Signing authority",
+   "pattern": "^Signing authority$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "Source",
+   "pattern": "^Source$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Source stake",
+   "pattern": "^Source stake$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Source token account",
+   "pattern": "^Source token account$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "Stake account",
+   "pattern": "^Stake account$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 3
+  },
+  {
+   "text": "Stake accounts",
+   "pattern": "^Stake accounts$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "To wallet",
+   "pattern": "^To wallet$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Token ID (hex)",
+   "pattern": "^Token ID \\(hex\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "Token account",
+   "pattern": "^Token account$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 9
+  },
+  {
+   "text": "Token holder",
+   "pattern": "^Token holder$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Token owner",
+   "pattern": "^Token owner$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2
+  },
+  {
+   "text": "Token program",
+   "pattern": "^Token program$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Token records supplied",
+   "pattern": "^Token records supplied$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Total quantity",
+   "pattern": "^Total quantity$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Trader",
+   "pattern": "^Trader$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Transfer authority",
+   "pattern": "^Transfer authority$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Transfer fee recipient (tree config)",
+   "pattern": "^Transfer fee recipient \\(tree config\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Transfer hook program (supplied)",
+   "pattern": "^Transfer hook program \\(supplied\\)$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Tree config",
+   "pattern": "^Tree config$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Unclassified extra accounts",
+   "pattern": "^Unclassified extra accounts$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Unlimited permit",
+   "pattern": "^Unlimited permit$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  },
+  {
+   "text": "Validator vote account",
+   "pattern": "^Validator vote account$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1
+  }
+ ],
+ "warnings": [
+  {
+   "id": "btcOutputsShown",
+   "rank": 1,
+   "translate": true,
+   "text": "Every output is shown. Change ownership and the intended multisig policy are not inferred from untrusted PSBT labels.",
+   "pattern": "^Every output is shown\\. Change ownership and the intended multisig policy are not inferred from untrusted PSBT labels\\.$",
+   "placeholders": 0,
+   "hits": 37,
+   "sites": 1,
+   "files": [
+    "src/bitcoin.js"
+   ]
+  },
+  {
+   "id": "btcHighFee",
+   "rank": 6,
+   "translate": true,
+   "text": "HIGH FEE: Fee exceeds 0.01 BTC, or exceeds half of the amount sent (and 0.0001 BTC). Verify it carefully.",
+   "pattern": "^HIGH FEE: Fee exceeds 0\\.01 BTC, or exceeds half of the amount sent \\(and 0\\.0001 BTC\\)\\. Verify it carefully\\.$",
+   "placeholders": 0,
+   "hits": 6,
+   "sites": 1,
+   "files": [
+    "src/bitcoin.js"
+   ]
+  },
+  {
+   "id": "evmMessageAuthorizes",
+   "rank": 4,
+   "translate": true,
+   "text": "Message signatures can authorize logins, orders or asset actions. Verify the entire message and origin.",
+   "pattern": "^Message signatures can authorize logins, orders or asset actions\\. Verify the entire message and origin\\.$",
+   "placeholders": 0,
+   "hits": 7,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "solOfflineLimits",
+   "rank": 7,
+   "translate": true,
+   "text": "Blockhash freshness, network identity, account state and base network fee cannot be verified offline.",
+   "pattern": "^Blockhash freshness, network identity, account state and base network fee cannot be verified offline\\.$",
+   "placeholders": 0,
+   "hits": 6,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "contractUnverified",
+   "rank": 8,
+   "translate": true,
+   "text": "Contract identity, current permissions and on-chain state are not verified offline.",
+   "pattern": "^Contract identity, current permissions and on-chain state are not verified offline\\.$",
+   "placeholders": 0,
+   "hits": 6,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "tronOfflineLimits",
+   "rank": 2,
+   "translate": true,
+   "text": "TRON chain identity and current account permissions cannot be verified from transaction bytes offline. Verify the intended network in the hot wallet.",
+   "pattern": "^TRON chain identity and current account permissions cannot be verified from transaction bytes offline\\. Verify the intended network in the hot wallet\\.$",
+   "placeholders": 0,
+   "hits": 11,
+   "sites": 1,
+   "files": [
+    "src/tron.js"
+   ]
+  },
+  {
+   "id": "tronOwnerPermission",
+   "rank": 3,
+   "translate": true,
+   "text": "Owner permission ID 0 may use weighted multisig members. Current membership, weights and threshold are unverified offline.",
+   "pattern": "^Owner permission ID 0 may use weighted multisig members\\. Current membership, weights and threshold are unverified offline\\.$",
+   "placeholders": 0,
+   "hits": 10,
+   "sites": 1,
+   "files": [
+    "src/tron.js"
+   ]
+  },
+  {
+   "id": "btcInputAmounts",
+   "rank": 9,
+   "translate": true,
+   "text": "Input amounts are supplied by the coordinator. Taproot ALL/DEFAULT commits every input amount; incorrect values invalidate the signature.",
+   "pattern": "^Input amounts are supplied by the coordinator\\. Taproot ALL/DEFAULT commits every input amount; incorrect values invalidate the signature\\.$",
+   "placeholders": 0,
+   "hits": 4,
+   "sites": 1,
+   "files": [
+    "src/bitcoin.js"
+   ]
+  },
+  {
+   "id": "solMessageRaw",
+   "rank": 10,
+   "translate": true,
+   "text": "Solana signs exact message bytes without a mandatory domain prefix. Only sign a message you recognize.",
+   "pattern": "^Solana signs exact message bytes without a mandatory domain prefix\\. Only sign a message you recognize\\.$",
+   "placeholders": 0,
+   "hits": 4,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "btcChangeVerified",
+   "rank": 5,
+   "translate": true,
+   "text": "Every output is shown. Outputs marked as returning to your wallet were verified from the signing wallet’s own public keys.",
+   "pattern": "^Every output is shown\\. Outputs marked as returning to your wallet were verified from the signing wallet’s own public keys\\.$",
+   "placeholders": 0,
+   "hits": 7,
+   "sites": 0,
+   "files": [
+    "(corpus)"
+   ]
+  },
+  {
+   "id": "typedDataUnverified",
+   "rank": 13,
+   "translate": true,
+   "text": "The verifying contract, domain name and current chain state are not verified offline.",
+   "pattern": "^The verifying contract, domain name and current chain state are not verified offline\\.$",
+   "placeholders": 0,
+   "hits": 3,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "unlimitedApproval",
+   "rank": 14,
+   "translate": true,
+   "text": "UNLIMITED spending approval.",
+   "pattern": "^UNLIMITED spending approval\\.$",
+   "placeholders": 0,
+   "hits": 2,
+   "sites": 5,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "tronMessageAuthorizes",
+   "rank": 11,
+   "translate": true,
+   "text": "A personal signature may authorize logins, orders or other asset actions. Verify the full message and origin.",
+   "pattern": "^A personal signature may authorize logins, orders or other asset actions\\. Verify the full message and origin\\.$",
+   "placeholders": 0,
+   "hits": 3,
+   "sites": 1,
+   "files": [
+    "src/tron.js"
+   ]
+  },
+  {
+   "id": "solHighFee",
+   "rank": 16,
+   "translate": true,
+   "text": "HIGH FEE: This transaction allows up to %1$s SOL in priority fees. Check the fee settings in your other wallet.",
+   "pattern": "^HIGH FEE: This transaction allows up to ([\\s\\S]+?) SOL in priority fees\\. Check the fee settings in your other wallet\\.$",
+   "placeholders": 1,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "tronHighFee",
+   "rank": 17,
+   "translate": true,
+   "text": "HIGH FEE: This transaction allows up to %1$s TRX in energy fees. Check the fee limit in your other wallet.",
+   "pattern": "^HIGH FEE: This transaction allows up to ([\\s\\S]+?) TRX in energy fees\\. Check the fee limit in your other wallet\\.$",
+   "placeholders": 1,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/tron.js"
+   ]
+  },
+  {
+   "id": "evmHighFee",
+   "rank": 18,
+   "translate": true,
+   "text": "HIGH FEE: This transaction allows up to %1$s in network fees. Check the gas settings in your other wallet.",
+   "pattern": "^HIGH FEE: This transaction allows up to ([\\s\\S]+?) in network fees\\. Check the gas settings in your other wallet\\.$",
+   "placeholders": 1,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "messageLooksLikeHash",
+   "rank": 19,
+   "translate": true,
+   "text": "HIGH RISK: This 32-byte message looks like a hash. Signing a hash you cannot read can authorize anything.",
+   "pattern": "^HIGH RISK: This 32-byte message looks like a hash\\. Signing a hash you cannot read can authorize anything\\.$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "unknownMethod",
+   "rank": 20,
+   "translate": true,
+   "text": "HIGH RISK: This contract method is not decoded. The contract may move assets or change permissions.",
+   "pattern": "^HIGH RISK: This contract method is not decoded\\. The contract may move assets or change permissions\\.$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "permitSpending",
+   "rank": 21,
+   "translate": true,
+   "text": "HIGH RISK: This permit authorizes token spending without another signature. Verify the spender, amount, expiry and nonce.",
+   "pattern": "^HIGH RISK: This permit authorizes token spending without another signature\\. Verify the spender, amount, expiry and nonce\\.$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "approveSharedSelector",
+   "rank": 22,
+   "translate": true,
+   "text": "This authorizes another address to spend assets. Unknown ERC20 allowance and ERC721 token approval share this selector.",
+   "pattern": "^This authorizes another address to spend assets\\. Unknown ERC20 allowance and ERC721 token approval share this selector\\.$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 2,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "rollupFees",
+   "rank": 23,
+   "translate": true,
+   "text": "Additional L1 data or rollup fees are not bound by gasLimit × gas price and cannot be calculated fully offline.",
+   "pattern": "^Additional L1 data or rollup fees are not bound by gasLimit × gas price and cannot be calculated fully offline\\.$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "tronMultisigMember",
+   "rank": 24,
+   "translate": true,
+   "text": "Multisig member weights and whether the selected permission is current are unverified offline. This adds one signature only.",
+   "pattern": "^Multisig member weights and whether the selected permission is current are unverified offline\\. This adds one signature only\\.$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/tron.js"
+   ]
+  },
+  {
+   "id": "typedDataAnyChain",
+   "rank": 25,
+   "translate": true,
+   "text": "Network context not included in the signed domain; this signature may be reusable on other networks.",
+   "pattern": "^Network context not included in the signed domain; this signature may be reusable on other networks\\.$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "tronOwnerSignerDiffers",
+   "rank": 26,
+   "translate": true,
+   "text": "Owner permission (ID 0): the requested signer differs from the account address. Current owner membership, weights and threshold are unverified offline. This adds one member signature only; the coordinator must verify membership and sufficient total weight before broadcast.",
+   "pattern": "^Owner permission \\(ID 0\\): the requested signer differs from the account address\\. Current owner membership, weights and threshold are unverified offline\\. This adds one member signature only; the coordinator must verify membership and sufficient total weight before broadcast\\.$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/tron.js"
+   ]
+  },
+  {
+   "id": "btcDataOutput",
+   "rank": 27,
+   "translate": true,
+   "text": "The transaction includes an unspendable data output.",
+   "pattern": "^The transaction includes an unspendable data output\\.$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/bitcoin.js"
+   ]
+  },
+  {
+   "id": "btcWitnessOnly",
+   "rank": 12,
+   "translate": false,
+   "text": "Input amounts of SegWit v0 inputs are supplied by the coordinator without full previous transactions. The fee is computed from those amounts; each signature commits only to its own input amount. Never sign two different requests that spend the same inputs.",
+   "pattern": "^Input amounts of SegWit v0 inputs are supplied by the coordinator without full previous transactions\\. The fee is computed from those amounts; each signature commits only to its own input amount\\. Never sign two different requests that spend the same inputs\\.$",
+   "placeholders": 0,
+   "hits": 3,
+   "sites": 1,
+   "files": [
+    "src/bitcoin.js"
+   ],
+   "ownbitAlias": true
+  },
+  {
+   "id": "ownershipProof",
+   "rank": 15,
+   "translate": false,
+   "text": "This signature only proves that this wallet holds the key of the account. It is not a transaction and cannot move funds.",
+   "pattern": "^This signature only proves that this wallet holds the key of the account\\. It is not a transaction and cannot move funds\\.$",
+   "placeholders": 0,
+   "hits": 2,
+   "sites": 1,
+   "files": [
+    "src/tron.js"
+   ],
+   "ownbitAlias": true
+  },
+  {
+   "id": "theTypedFieldsAreDecodedBut",
+   "rank": 28,
+   "translate": false,
+   "text": "The typed fields are decoded, but this application-specific authorization is not semantically understood. Review every signed field.",
+   "pattern": "^The typed fields are decoded, but this application-specific authorization is not semantically understood\\. Review every signed field\\.$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "thisIsOneSafeOwnerSignature",
+   "rank": 29,
+   "translate": false,
+   "text": "This is one Safe owner signature. Current owner membership, threshold and nonce remain unverified offline.",
+   "pattern": "^This is one Safe owner signature\\. Current owner membership, threshold and nonce remain unverified offline\\.$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "thisTransactionUsesADurableNonce",
+   "rank": 30,
+   "translate": false,
+   "text": "This transaction uses a durable nonce, so it does not expire. It can be submitted until the nonce account advances.",
+   "pattern": "^This transaction uses a durable nonce, so it does not expire\\. It can be submitted until the nonce account advances\\.$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ],
+   "ownbitAlias": true
+  },
+  {
+   "id": "unknownTokenContractDisplayRawUnits",
+   "rank": 31,
+   "translate": false,
+   "text": "Unknown token contract: display raw units and the full contract address; token metadata is unavailable offline.",
+   "pattern": "^Unknown token contract: display raw units and the full contract address; token metadata is unavailable offline\\.$",
+   "placeholders": 0,
+   "hits": 1,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "highRiskBurningPermanentlyDestroysThis",
+   "rank": 32,
+   "translate": false,
+   "text": "HIGH RISK: Burning permanently destroys this asset. This cannot be undone.",
+   "pattern": "^HIGH RISK: Burning permanently destroys this asset\\. This cannot be undone\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskYouReceiveNothingFor",
+   "rank": 33,
+   "translate": false,
+   "text": "HIGH RISK: You receive nothing for the items you give.",
+   "pattern": "^HIGH RISK: You receive nothing for the items you give\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskIsTypedButIs",
+   "rank": 34,
+   "translate": false,
+   "text": "HIGH RISK: %1$s is typed %2$s, but %3$s is %4$s, a fungible token in the local registry, not an NFT contract. %5$s",
+   "pattern": "^HIGH RISK: ([\\s\\S]+?) is typed ([\\s\\S]+?), but ([\\s\\S]+?) is ([\\s\\S]+?), a fungible token in the local registry, not an NFT contract\\. ([\\s\\S]+?)$",
+   "placeholders": 5,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ],
+   "helper": true
+  },
+  {
+   "id": "highRiskWillBeAbleTo",
+   "rank": 35,
+   "translate": false,
+   "text": "HIGH RISK: %1$s will be able to transfer every token held by this account in contract %2$s (ERC-721 or ERC-1155), including ones received later, until the approval is revoked.",
+   "pattern": "^HIGH RISK: ([\\s\\S]+?) will be able to transfer every token held by this account in contract ([\\s\\S]+?) \\(ERC-721 or ERC-1155\\), including ones received later, until the approval is revoked\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "highRiskAdditionalAccountsArePassed",
+   "rank": 36,
+   "translate": false,
+   "text": "HIGH RISK: Additional accounts are passed to Core plugin adapters (for example lifecycle hooks or oracles). Their programs are not decoded and cannot be checked offline.",
+   "pattern": "^HIGH RISK: Additional accounts are passed to Core plugin adapters \\(for example lifecycle hooks or oracles\\)\\. Their programs are not decoded and cannot be checked offline\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskAnItemUsesAn",
+   "rank": 37,
+   "translate": false,
+   "text": "HIGH RISK: An item uses an unknown Seaport item type; it is not decoded.",
+   "pattern": "^HIGH RISK: An item uses an unknown Seaport item type; it is not decoded\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskCallUsesDelegatecall",
+   "rank": 38,
+   "translate": false,
+   "text": "HIGH RISK: Call %1$s uses DELEGATECALL.",
+   "pattern": "^HIGH RISK: Call ([\\s\\S]+?) uses DELEGATECALL\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "highRiskDelegatecallExecutesInThe",
+   "rank": 39,
+   "translate": false,
+   "text": "HIGH RISK: DELEGATECALL executes in the Safe account context and may change owners, modules or storage.",
+   "pattern": "^HIGH RISK: DELEGATECALL executes in the Safe account context and may change owners, modules or storage\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "highRiskDelegatecallExecutesUsingSafe",
+   "rank": 40,
+   "translate": false,
+   "text": "HIGH RISK: DELEGATECALL executes using Safe account storage and may change permissions.",
+   "pattern": "^HIGH RISK: DELEGATECALL executes using Safe account storage and may change permissions\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "highRiskDeploymentBytecodeIsOpaque",
+   "rank": 41,
+   "translate": false,
+   "text": "HIGH RISK: Deployment bytecode is opaque; runtime behavior and resulting permissions are not decoded.",
+   "pattern": "^HIGH RISK: Deployment bytecode is opaque; runtime behavior and resulting permissions are not decoded\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "highRiskInvalidBlurAssetType",
+   "rank": 42,
+   "translate": false,
+   "text": "HIGH RISK: Invalid Blur asset type %1$s.",
+   "pattern": "^HIGH RISK: Invalid Blur asset type ([\\s\\S]+?)\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskInvalidBlurOrderType",
+   "rank": 43,
+   "translate": false,
+   "text": "HIGH RISK: Invalid Blur order type %1$s.",
+   "pattern": "^HIGH RISK: Invalid Blur order type ([\\s\\S]+?)\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskInvalidLooksrareCollectionType",
+   "rank": 44,
+   "translate": false,
+   "text": "HIGH RISK: Invalid LooksRare collection type %1$s.",
+   "pattern": "^HIGH RISK: Invalid LooksRare collection type ([\\s\\S]+?)\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskInvalidLooksrareQuoteType",
+   "rank": 45,
+   "translate": false,
+   "text": "HIGH RISK: Invalid LooksRare quote type %1$s.",
+   "pattern": "^HIGH RISK: Invalid LooksRare quote type ([\\s\\S]+?)\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskInvalidSeaportOrderType",
+   "rank": 46,
+   "translate": false,
+   "text": "HIGH RISK: Invalid Seaport order type %1$s.",
+   "pattern": "^HIGH RISK: Invalid Seaport order type ([\\s\\S]+?)\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskLockingFreezesThisToken",
+   "rank": 47,
+   "translate": false,
+   "text": "HIGH RISK: Locking freezes this token so its owner cannot transfer, sell or burn it until the locking authority unlocks it.",
+   "pattern": "^HIGH RISK: Locking freezes this token so its owner cannot transfer, sell or burn it until the locking authority unlocks it\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskMostOfThePayment",
+   "rank": 48,
+   "translate": false,
+   "text": "HIGH RISK: Most of the %1$s payment goes to other addresses: you receive %2$s of %3$s.",
+   "pattern": "^HIGH RISK: Most of the ([\\s\\S]+?) payment goes to other addresses: you receive ([\\s\\S]+?) of ([\\s\\S]+?)\\.$",
+   "placeholders": 3,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskOnlyAProposalReference",
+   "rank": 49,
+   "translate": false,
+   "text": "HIGH RISK: Only a proposal reference is signed. Proposal transfer contents, existing members, permissions and threshold are NOT included and cannot be verified offline.",
+   "pattern": "^HIGH RISK: Only a proposal reference is signed\\. Proposal transfer contents, existing members, permissions and threshold are NOT included and cannot be verified offline\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskOrderTypeContract4",
+   "rank": 50,
+   "translate": false,
+   "text": "HIGH RISK: Order type CONTRACT (4) is not valid for a signed order.",
+   "pattern": "^HIGH RISK: Order type CONTRACT \\(4\\) is not valid for a signed order\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskSeaportFormatOrderFor",
+   "rank": 51,
+   "translate": false,
+   "text": "HIGH RISK: Seaport-format order for an unrecognised contract (%1$s). It may transfer your assets on terms other than those shown.",
+   "pattern": "^HIGH RISK: Seaport-format order for an unrecognised contract \\(([\\s\\S]+?)\\)\\. It may transfer your assets on terms other than those shown\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskTheBuyerMayChoose",
+   "rank": 52,
+   "translate": false,
+   "text": "HIGH RISK: The buyer may choose %1$s token(s) of yours from %2$s matching criteria root %3$s; which tokens that root covers cannot be shown offline.",
+   "pattern": "^HIGH RISK: The buyer may choose ([\\s\\S]+?) token\\(s\\) of yours from ([\\s\\S]+?) matching criteria root ([\\s\\S]+?); which tokens that root covers cannot be shown offline\\.$",
+   "placeholders": 3,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskTheBuyerMayChoose2",
+   "rank": 53,
+   "translate": false,
+   "text": "HIGH RISK: The buyer may choose ANY %1$s token(s) of yours from %2$s.",
+   "pattern": "^HIGH RISK: The buyer may choose ANY ([\\s\\S]+?) token\\(s\\) of yours from ([\\s\\S]+?)\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskTheDelegate",
+   "rank": 54,
+   "translate": false,
+   "text": "HIGH RISK: The delegate %1$s %2$s.",
+   "pattern": "^HIGH RISK: The delegate ([\\s\\S]+?) ([\\s\\S]+?)\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskTheMakerFeeIs",
+   "rank": 55,
+   "translate": false,
+   "text": "HIGH RISK: The maker fee is %1$s%% (%2$s bps) of each fill, paid to %3$s.",
+   "pattern": "^HIGH RISK: The maker fee is ([\\s\\S]+?)% \\(([\\s\\S]+?) bps\\) of each fill, paid to ([\\s\\S]+?)\\.$",
+   "placeholders": 3,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskTheNewDelegateThis",
+   "rank": 56,
+   "translate": false,
+   "text": "HIGH RISK: The new delegate %1$s this compressed NFT without asking you again, until the delegate is changed or the NFT is transferred.%2$s",
+   "pattern": "^HIGH RISK: The new delegate ([\\s\\S]+?) this compressed NFT without asking you again, until the delegate is changed or the NFT is transferred\\.([\\s\\S]+?)$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskTheNewProgramMay",
+   "rank": 57,
+   "translate": false,
+   "text": "HIGH RISK: The new program may control this account.",
+   "pattern": "^HIGH RISK: The new program may control this account\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskTheOrderOffererDiffers",
+   "rank": 58,
+   "translate": false,
+   "text": "HIGH RISK: The order offerer %1$s differs from the requested signer %2$s. This signature only matters if the offerer is a contract wallet that accepts it.",
+   "pattern": "^HIGH RISK: The order offerer ([\\s\\S]+?) differs from the requested signer ([\\s\\S]+?)\\. This signature only matters if the offerer is a contract wallet that accepts it\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskTheOrderSignerDiffers",
+   "rank": 59,
+   "translate": false,
+   "text": "HIGH RISK: The order signer %1$s differs from the requested signer %2$s.",
+   "pattern": "^HIGH RISK: The order signer ([\\s\\S]+?) differs from the requested signer ([\\s\\S]+?)\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskTheOrderTraderDiffers",
+   "rank": 60,
+   "translate": false,
+   "text": "HIGH RISK: The order trader %1$s differs from the requested signer %2$s.",
+   "pattern": "^HIGH RISK: The order trader ([\\s\\S]+?) differs from the requested signer ([\\s\\S]+?)\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskTheSigningAuthorityIs",
+   "rank": 61,
+   "translate": false,
+   "text": "HIGH RISK: The signing authority %1$s is not the NFT owner %2$s. You are transferring it as its delegate or as the collection’s permanent transfer delegate.",
+   "pattern": "^HIGH RISK: The signing authority ([\\s\\S]+?) is not the NFT owner ([\\s\\S]+?)\\. You are transferring it as its delegate or as the collection’s permanent transfer delegate\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskTheTransferAuthorityIs",
+   "rank": 62,
+   "translate": false,
+   "text": "HIGH RISK: The transfer authority %1$s is not the token owner %2$s. This transfer is authorised as a delegate of that wallet (for example a sale, transfer, locked-transfer, standard or migration delegate), not by the owner.",
+   "pattern": "^HIGH RISK: The transfer authority ([\\s\\S]+?) is not the token owner ([\\s\\S]+?)\\. This transfer is authorised as a delegate of that wallet \\(for example a sale, transfer, locked-transfer, standard or migration delegate\\), not by the owner\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskThisNftMarketplaceInstruction",
+   "rank": 63,
+   "translate": false,
+   "text": "HIGH RISK: This %1$s NFT marketplace instruction (list, delist, buy, sell, bid or pool deposit) is not decoded. It may move your NFT into marketplace escrow, give the marketplace a sale delegate, or spend SOL. Only sign if you started exactly this action on %2$s.",
+   "pattern": "^HIGH RISK: This ([\\s\\S]+?) NFT marketplace instruction \\(list, delist, buy, sell, bid or pool deposit\\) is not decoded\\. It may move your NFT into marketplace escrow, give the marketplace a sale delegate, or spend SOL\\. Only sign if you started exactly this action on ([\\s\\S]+?)\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskThisSafeTransactionPays",
+   "rank": 64,
+   "translate": false,
+   "text": "HIGH RISK: This Safe transaction pays a gas refund of up to (gas used + %1$s) × %2$s %3$s to %4$s. Only approve refunds you expect.",
+   "pattern": "^HIGH RISK: This Safe transaction pays a gas refund of up to \\(gas used \\+ ([\\s\\S]+?)\\) × ([\\s\\S]+?) ([\\s\\S]+?) to ([\\s\\S]+?)\\. Only approve refunds you expect\\.$",
+   "placeholders": 4,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "highRiskThisBatchContainsOrders",
+   "rank": 65,
+   "translate": false,
+   "text": "HIGH RISK: This batch contains %1$s orders; only the first %2$s are itemised here. The rest appear only in the signed values.",
+   "pattern": "^HIGH RISK: This batch contains ([\\s\\S]+?) orders; only the first ([\\s\\S]+?) are itemised here\\. The rest appear only in the signed values\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskThisBulkOrderContains",
+   "rank": 66,
+   "translate": false,
+   "text": "HIGH RISK: This bulk order contains %1$s orders; only the first %2$s are itemised here. The rest appear only in the signed values.",
+   "pattern": "^HIGH RISK: This bulk order contains ([\\s\\S]+?) orders; only the first ([\\s\\S]+?) are itemised here\\. The rest appear only in the signed values\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskThisChangesSafeAccount",
+   "rank": 67,
+   "translate": false,
+   "text": "HIGH RISK: This changes Safe account ownership, threshold, modules, guard or fallback handler.",
+   "pattern": "^HIGH RISK: This changes Safe account ownership, threshold, modules, guard or fallback handler\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "highRiskThisChangesControlOf",
+   "rank": 68,
+   "translate": false,
+   "text": "HIGH RISK: This changes control of the token account or mint; revoking an authority may be irreversible.",
+   "pattern": "^HIGH RISK: This changes control of the token account or mint; revoking an authority may be irreversible\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskThisFundsANew",
+   "rank": 69,
+   "translate": false,
+   "text": "HIGH RISK: This funds a new account controlled by program %1$s. That program, not you, will control the %2$s SOL.",
+   "pattern": "^HIGH RISK: This funds a new account controlled by program ([\\s\\S]+?)\\. That program, not you, will control the ([\\s\\S]+?) SOL\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskThisInstructionIsNot",
+   "rank": 70,
+   "translate": false,
+   "text": "HIGH RISK: This instruction is not semantically decoded and may transfer assets or change permissions.",
+   "pattern": "^HIGH RISK: This instruction is not semantically decoded and may transfer assets or change permissions\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskThisOrderEffectivelyNever",
+   "rank": 71,
+   "translate": false,
+   "text": "HIGH RISK: This order effectively never expires (end time %1$s). It stays valid until you cancel it on-chain.",
+   "pattern": "^HIGH RISK: This order effectively never expires \\(end time ([\\s\\S]+?)\\)\\. It stays valid until you cancel it on-chain\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ],
+   "helper": true
+  },
+  {
+   "id": "highRiskThisOrderStaysValid",
+   "rank": 72,
+   "translate": false,
+   "text": "HIGH RISK: This order stays valid for more than 10 years (until %1$s). It can be filled at any time until then unless you cancel it on-chain.",
+   "pattern": "^HIGH RISK: This order stays valid for more than 10 years \\(until ([\\s\\S]+?)\\)\\. It can be filled at any time until then unless you cancel it on-chain\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ],
+   "helper": true
+  },
+  {
+   "id": "highRiskThisReplacesAccountOwners",
+   "rank": 73,
+   "translate": false,
+   "text": "HIGH RISK: This replaces account owners and spending permissions. Incorrect keys or thresholds can permanently lock funds.",
+   "pattern": "^HIGH RISK: This replaces account owners and spending permissions\\. Incorrect keys or thresholds can permanently lock funds\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/tron.js"
+   ]
+  },
+  {
+   "id": "highRiskThisSignsOnlyA",
+   "rank": 74,
+   "translate": false,
+   "text": "HIGH RISK: This signs only a Merkle root of Blur listings. Which token IDs are included, and at what prices, is not in this request and cannot be shown. Anyone holding the matching listing data can fill every listing it covers.",
+   "pattern": "^HIGH RISK: This signs only a Merkle root of Blur listings\\. Which token IDs are included, and at what prices, is not in this request and cannot be shown\\. Anyone holding the matching listing data can fill every listing it covers\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskThisSignsOnlyA2",
+   "rank": 75,
+   "translate": false,
+   "text": "HIGH RISK: This signs only a Merkle root of Blur orders. Which NFTs are listed, and at what prices, is not in this request and cannot be shown. Anyone holding the matching order list can fill every order it covers.",
+   "pattern": "^HIGH RISK: This signs only a Merkle root of Blur orders\\. Which NFTs are listed, and at what prices, is not in this request and cannot be shown\\. Anyone holding the matching order list can fill every order it covers\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskThisTransferSuppliesAccounts",
+   "rank": 76,
+   "translate": false,
+   "text": "HIGH RISK: This transfer supplies accounts for transfer-hook program %1$s. The mint’s actual transfer hook is on-chain state and cannot be verified offline; whichever hook the mint configures will run with the accounts listed.",
+   "pattern": "^HIGH RISK: This transfer supplies accounts for transfer-hook program ([\\s\\S]+?)\\. The mint’s actual transfer hook is on-chain state and cannot be verified offline; whichever hook the mint configures will run with the accounts listed\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "highRiskWhatYouReceiveSo",
+   "rank": 77,
+   "translate": false,
+   "text": "HIGH RISK: What you receive %1$s, so this order can be filled for almost nothing.",
+   "pattern": "^HIGH RISK: What you receive ([\\s\\S]+?), so this order can be filled for almost nothing\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "highRiskYouAreTransferringAn",
+   "rank": 78,
+   "translate": false,
+   "text": "HIGH RISK: You are transferring an NFT owned by %1$s as its delegate.",
+   "pattern": "^HIGH RISK: You are transferring an NFT owned by ([\\s\\S]+?) as its delegate\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "authorizationRulePayloadIsNotDecoded",
+   "rank": 79,
+   "translate": false,
+   "text": "Authorization rule payload is not decoded.",
+   "pattern": "^Authorization rule payload is not decoded\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "thePayerOrSigningAuthorityDoes",
+   "rank": 80,
+   "translate": false,
+   "text": "The payer or signing authority does not sign this transaction, so the transfer will fail on-chain.",
+   "pattern": "^The payer or signing authority does not sign this transaction, so the transfer will fail on-chain\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "token2022MintExtensionsAndTransfer",
+   "rank": 81,
+   "translate": false,
+   "text": "Token-2022 mint extensions and transfer hooks cannot be verified offline.",
+   "pattern": "^Token-2022 mint extensions and transfer hooks cannot be verified offline\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "unknownTokenContractAmountsAreShown",
+   "rank": 82,
+   "translate": false,
+   "text": "Unknown token contract: amounts are shown in raw units; token metadata is unavailable offline.",
+   "pattern": "^Unknown token contract: amounts are shown in raw units; token metadata is unavailable offline\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 2,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "moreOrderSpecificWarningNotListed",
+   "rank": 83,
+   "translate": false,
+   "text": "%1$s more order-specific warning%2$s not listed here. Review every order in the signed values.",
+   "pattern": "^([\\s\\S]+?) more order-specific warning([\\s\\S]+?) not listed here\\. Review every order in the signed values\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ],
+   "helper": true
+  },
+  {
+   "id": "aCollectionOfferMustHaveExactly",
+   "rank": 84,
+   "translate": false,
+   "text": "A collection offer must have exactly one amount; this order cannot be filled.",
+   "pattern": "^A collection offer must have exactly one amount; this order cannot be filled\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "aRoyaltyTransferRuleSetWill",
+   "rank": 85,
+   "translate": false,
+   "text": "A royalty/transfer rule set will be evaluated on-chain and cannot be checked offline.",
+   "pattern": "^A royalty/transfer rule set will be evaluated on-chain and cannot be checked offline\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "availableStakedResourcesPendingUnfreezesAnd",
+   "rank": 86,
+   "translate": false,
+   "text": "Available staked resources, pending unfreezes and delegation state cannot be verified offline.",
+   "pattern": "^Available staked resources, pending unfreezes and delegation state cannot be verified offline\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/tron.js"
+   ]
+  },
+  {
+   "id": "closingThisTokenAccountSendsAll",
+   "rank": 87,
+   "translate": false,
+   "text": "Closing this token account sends all of its remaining SOL to the specified recipient. For a wrapped SOL account this is the entire wrapped balance, not just rent.",
+   "pattern": "^Closing this token account sends all of its remaining SOL to the specified recipient\\. For a wrapped SOL account this is the entire wrapped balance, not just rent\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "collectionPluginsPermanentTransferDelegateRoyalties",
+   "rank": 88,
+   "translate": false,
+   "text": "Collection plugins (permanent transfer delegate, royalties, freeze) are evaluated on-chain and cannot be checked offline.",
+   "pattern": "^Collection plugins \\(permanent transfer delegate, royalties, freeze\\) are evaluated on-chain and cannot be checked offline\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "corePluginsRoyaltiesFreezePermanentTransfer",
+   "rank": 89,
+   "translate": false,
+   "text": "Core plugins (royalties, freeze, permanent transfer delegate, oracle) can block or alter this transfer and cannot be checked offline.",
+   "pattern": "^Core plugins \\(royalties, freeze, permanent transfer delegate, oracle\\) can block or alter this transfer and cannot be checked offline\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "decimalsAreNotIncludedInThis",
+   "rank": 90,
+   "translate": false,
+   "text": "Decimals are not included in this instruction, so the amount is shown in raw units. Without the edition account this may be a fungible token rather than an NFT.",
+   "pattern": "^Decimals are not included in this instruction, so the amount is shown in raw units\\. Without the edition account this may be a fungible token rather than an NFT\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "ifTheMerkleProofIsStale",
+   "rank": 91,
+   "translate": false,
+   "text": "If the Merkle proof is stale the transaction fails; it cannot affect any asset other than the asset ID shown.",
+   "pattern": "^If the Merkle proof is stale the transaction fails; it cannot affect any asset other than the asset ID shown\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "ifThisIsAnErc721",
+   "rank": 92,
+   "translate": false,
+   "text": "If this is an ERC-721 contract, this clears the approval for token %1$s. Many ERC-20 implementations reject a zero spender.",
+   "pattern": "^If this is an ERC-721 contract, this clears the approval for token ([\\s\\S]+?)\\. Many ERC-20 implementations reject a zero spender\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "itemQuantity0",
+   "rank": 93,
+   "translate": false,
+   "text": "Item%1$s %2$s %3$s quantity 0.",
+   "pattern": "^Item([\\s\\S]+?) ([\\s\\S]+?) ([\\s\\S]+?) quantity 0\\.$",
+   "placeholders": 3,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "looksrareRejectsBidsInNativeEth",
+   "rank": 94,
+   "translate": false,
+   "text": "LooksRare rejects bids in native ETH, so this bid cannot be filled.",
+   "pattern": "^LooksRare rejects bids in native ETH, so this bid cannot be filled\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "mintIsNotIncludedInThis",
+   "rank": 95,
+   "translate": false,
+   "text": "Mint is not included in this unchecked instruction. Token-account addresses cannot establish asset identity or decimals offline.",
+   "pattern": "^Mint is not included in this unchecked instruction\\. Token-account addresses cannot establish asset identity or decimals offline\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "multisendTargetCodeAndTheCurrent",
+   "rank": 96,
+   "translate": false,
+   "text": "MultiSend target code and the current Safe policy are unverified offline.",
+   "pattern": "^MultiSend target code and the current Safe policy are unverified offline\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "nftNameImageAndCollectionAre",
+   "rank": 97,
+   "translate": false,
+   "text": "NFT name, image and collection are not in the transaction and cannot be verified offline. Compare the asset ID with an independent source.",
+   "pattern": "^NFT name, image and collection are not in the transaction and cannot be verified offline\\. Compare the asset ID with an independent source\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "nftNameImageAndCollectionAre2",
+   "rank": 98,
+   "translate": false,
+   "text": "NFT name, image and collection are not in the transaction and cannot be verified offline. Compare the mint address with an independent source.",
+   "pattern": "^NFT name, image and collection are not in the transaction and cannot be verified offline\\. Compare the mint address with an independent source\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "neitherTheLeafOwnerNorThe",
+   "rank": 99,
+   "translate": false,
+   "text": "Neither the leaf owner nor the leaf delegate signs this transaction, so the transfer will fail on-chain.",
+   "pattern": "^Neither the leaf owner nor the leaf delegate signs this transaction, so the transfer will fail on-chain\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "newPermissionMembersShownHereAre",
+   "rank": 100,
+   "translate": false,
+   "text": "New permission members shown here are the replacement configuration, not evidence of current signing authority.",
+   "pattern": "^New permission members shown here are the replacement configuration, not evidence of current signing authority\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/tron.js"
+   ]
+  },
+  {
+   "id": "noVerifyingContractIsBoundBy",
+   "rank": 101,
+   "translate": false,
+   "text": "No verifying contract is bound by the signed domain.",
+   "pattern": "^No verifying contract is bound by the signed domain\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "nonStandardStrategyItsAdditionalparametersAre",
+   "rank": 102,
+   "translate": false,
+   "text": "Non-standard strategy %1$s; its additionalParameters are not decoded.",
+   "pattern": "^Non-standard strategy ([\\s\\S]+?); its additionalParameters are not decoded\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "safeOwnersAndThresholdAreNot",
+   "rank": 103,
+   "translate": false,
+   "text": "Safe owners and threshold are not independently verified offline.",
+   "pattern": "^Safe owners and threshold are not independently verified offline\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "stakeAuthoritiesLockupsBalancesAndValidator",
+   "rank": 104,
+   "translate": false,
+   "text": "Stake authorities, lockups, balances and validator status cannot be verified offline.",
+   "pattern": "^Stake authorities, lockups, balances and validator status cannot be verified offline\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "theNftSNameImageAnd",
+   "rank": 105,
+   "translate": false,
+   "text": "The NFT’s name, image and collection are committed only as hashes and cannot be displayed offline. Compare the asset ID with an independent source.",
+   "pattern": "^The NFT’s name, image and collection are committed only as hashes and cannot be displayed offline\\. Compare the asset ID with an independent source\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "theAssetSCurrentOwnerIs",
+   "rank": 106,
+   "translate": false,
+   "text": "The asset’s current owner is not included in the transaction. The signing authority must be the owner or an approved transfer delegate; if this is not your NFT, you are acting as a delegate.",
+   "pattern": "^The asset’s current owner is not included in the transaction\\. The signing authority must be the owner or an approved transfer delegate; if this is not your NFT, you are acting as a delegate\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "theItemIdsAndAmountsDo",
+   "rank": 107,
+   "translate": false,
+   "text": "The item IDs and amounts do not match, so this order cannot be filled as shown.",
+   "pattern": "^The item IDs and amounts do not match, so this order cannot be filled as shown\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "theLeafOwnerDoesNotSign",
+   "rank": 108,
+   "translate": false,
+   "text": "The leaf owner%1$s does not sign this transaction, so it will fail on-chain.",
+   "pattern": "^The leaf owner([\\s\\S]+?) does not sign this transaction, so it will fail on-chain\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "theOrderEndTimeIsNot",
+   "rank": 109,
+   "translate": false,
+   "text": "The order end time is not after its start time, so it cannot be filled.",
+   "pattern": "^The order end time is not after its start time, so it cannot be filled\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ],
+   "helper": true
+  },
+  {
+   "id": "theQuantityIs0SoThis",
+   "rank": 110,
+   "translate": false,
+   "text": "The quantity is 0, so this transfer moves nothing.",
+   "pattern": "^The quantity is 0, so this transfer moves nothing\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "theRecipientWalletIsNotIncluded",
+   "rank": 111,
+   "translate": false,
+   "text": "The recipient wallet is not included in this transaction, only its token account. Make sure the destination token account belongs to the intended recipient.",
+   "pattern": "^The recipient wallet is not included in this transaction, only its token account\\. Make sure the destination token account belongs to the intended recipient\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "theRequestIncludedFieldSThat",
+   "rank": 112,
+   "translate": false,
+   "text": "The request included %1$s field(s) that are not part of the signed data. They were ignored and are not shown as signed values.",
+   "pattern": "^The request included ([\\s\\S]+?) field\\(s\\) that are not part of the signed data\\. They were ignored and are not shown as signed values\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "theTransferAuthorityDoesNotSign",
+   "rank": 113,
+   "translate": false,
+   "text": "The transfer authority does not sign this transaction, so the transfer will fail on-chain.",
+   "pattern": "^The transfer authority does not sign this transaction, so the transfer will fail on-chain\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "thisBatchContainsNoItems",
+   "rank": 114,
+   "translate": false,
+   "text": "This batch contains no items.",
+   "pattern": "^This batch contains no items\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "thisCallAlsoSendsTrxTo",
+   "rank": 115,
+   "translate": false,
+   "text": "This call also sends %1$s TRX to the contract.",
+   "pattern": "^This call also sends ([\\s\\S]+?) TRX to the contract\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/tron.js"
+   ]
+  },
+  {
+   "id": "thisCallAlsoSendsToThe",
+   "rank": 116,
+   "translate": false,
+   "text": "This call also sends %1$s to the contract.",
+   "pattern": "^This call also sends ([\\s\\S]+?) to the contract\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "thisIsACustomPermitSchema",
+   "rank": 117,
+   "translate": false,
+   "text": "This is a custom permit schema. Its complete signed fields are shown, but application-specific behavior is not fully decoded.",
+   "pattern": "^This is a custom permit schema\\. Its complete signed fields are shown, but application-specific behavior is not fully decoded\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "thisListingSellsNftItemsTogether",
+   "rank": 118,
+   "translate": false,
+   "text": "This listing sells %1$s NFT items together in one order.",
+   "pattern": "^This listing sells ([\\s\\S]+?) NFT items together in one order\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "thisListingSellsNftItemsTogether2",
+   "rank": 119,
+   "translate": false,
+   "text": "This listing sells %1$s NFT items%2$s together in one order.",
+   "pattern": "^This listing sells ([\\s\\S]+?) NFT items([\\s\\S]+?) together in one order\\.$",
+   "placeholders": 2,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "thisLooksLikeAnNft1",
+   "rank": 120,
+   "translate": false,
+   "text": "This looks like an NFT (1 unit, 0 decimals), but 0-decimal fungible tokens match the same pattern. NFT name, image, collection and verified status are not in the transaction and cannot be checked offline. Compare the mint address with an independent source.",
+   "pattern": "^This looks like an NFT \\(1 unit, 0 decimals\\), but 0-decimal fungible tokens match the same pattern\\. NFT name, image, collection and verified status are not in the transaction and cannot be checked offline\\. Compare the mint address with an independent source\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "thisOrderStaysValidForMore",
+   "rank": 121,
+   "translate": false,
+   "text": "This order stays valid for more than a year (until %1$s).",
+   "pattern": "^This order stays valid for more than a year \\(until ([\\s\\S]+?)\\)\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ],
+   "helper": true
+  },
+  {
+   "id": "thisRestrictedOrderIsValidatedBy",
+   "rank": 122,
+   "translate": false,
+   "text": "This restricted order is validated by zone %1$s, whose rules are not decoded.",
+   "pattern": "^This restricted order is validated by zone ([\\s\\S]+?), whose rules are not decoded\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ]
+  },
+  {
+   "id": "tokenAppearsTimesInThisBatch",
+   "rank": 123,
+   "translate": false,
+   "text": "Token %1$s appears %2$s times in this batch; its total quantity is %3$s.",
+   "pattern": "^Token ([\\s\\S]+?) appears ([\\s\\S]+?) times in this batch; its total quantity is ([\\s\\S]+?)\\.$",
+   "placeholders": 3,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/evm.js"
+   ]
+  },
+  {
+   "id": "tokenDelegationAuthorizesAnotherAddressTo",
+   "rank": 124,
+   "translate": false,
+   "text": "Token delegation authorizes another address to spend these assets.",
+   "pattern": "^Token delegation authorizes another address to spend these assets\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "tokenAccountOwnersMintMetadataAnd",
+   "rank": 125,
+   "translate": false,
+   "text": "Token-account owners, mint metadata and decimals are not independently fetched or verified offline.",
+   "pattern": "^Token-account owners, mint metadata and decimals are not independently fetched or verified offline\\.$",
+   "placeholders": 0,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/solana.js"
+   ]
+  },
+  {
+   "id": "youReceiveOnlyForTheItems",
+   "rank": 126,
+   "translate": false,
+   "text": "You receive only %1$s for the items you give. Check that this very low price is intended.",
+   "pattern": "^You receive only ([\\s\\S]+?) for the items you give\\. Check that this very low price is intended\\.$",
+   "placeholders": 1,
+   "hits": 0,
+   "sites": 1,
+   "files": [
+    "src/nft-orders.js"
+   ],
+   "helper": true
+  }
+ ],
+ "corpus": {
+  "reviews": 94,
+  "warnings": 127,
+  "labels": 988,
+  "codes": [
+   "INDEX",
+   "INTEGRITY",
+   "INVALID_REQUEST",
+   "LOOKUP_TABLE",
+   "NETWORK",
+   "OPERATION",
+   "PLAN",
+   "PREVOUT",
+   "PROFILE",
+   "QR_PROTOCOL",
+   "RISK",
+   "SCAN",
+   "SIGNER",
+   "TRANSACTION"
+  ],
+  "statuses": [
+   "ambiguous",
+   "invalid",
+   "noMatch",
+   "ready",
+   "setupRequired"
+  ],
+  "decodeStatuses": [
+   "fullyDecoded",
+   "opaque",
+   "partiallyDecoded"
+  ],
+  "riskLevels": [
+   "high",
+   "normal",
+   "warning"
+  ],
+  "actions": [
+   "Approve Spending",
+   "Consolidate",
+   "Contract Interaction",
+   "Permit Spending",
+   "Safe: Send",
+   "Send",
+   "Sign Message",
+   "Sign Transaction",
+   "Sign Typed Data",
+   "Transfer SOL",
+   "Verify Ownership"
+  ],
+  "warningsOnlyFromCorpus": 1,
+  "labelsOnlyFromCorpus": 1,
+  "titlesOnlyFromCorpus": 8
+ }
+}
