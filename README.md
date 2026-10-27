@@ -11,12 +11,13 @@ of it.
 |---|---|
 | [`iOS/`](iOS) | Swift package `OwnbitCore` (iOS 15+): the encrypted key vault, mnemonic generation and validation, the JavaScript engine and chain bridges, and the cold-wallet public-protocol signer |
 | [`js/`](js) | The JavaScript bundles that derive keys and sign transactions, with their SHA-256 and the libraries inside each one ([`js/README.md`](js/README.md)) |
-| [`android/`](android) | Reserved for the Android 5.0 core |
+| [`android/`](android) | Kotlin library modules (Gradle) of Ownbit Android 5.x: the encrypted key vault (Android Keystore device key, biometric quick send), mnemonic generation and validation, the JavaScript engine and chain bridges, transaction signing with its native checks, and the cold-wallet public-protocol signer ([`android/README.md`](android/README.md)) |
 
 ## How Ownbit protects your keys
 
 **Mnemonic generation.** A new mnemonic (12 or 24 words, BIP39) is generated inside the bundled BIP39 code from the
-operating system's secure random generator (`crypto.getRandomValues`). The seed is BIP39(mnemonic, passphrase), with an
+operating system's secure random generator (`crypto.getRandomValues` on iOS; on Android the entropy comes from
+`SecureRandom` and the bundle's `entropyToMnemonic` turns it into words). The seed is BIP39(mnemonic, passphrase), with an
 optional BIP39 passphrase for imported wallets.
 
 **Storage (Ownbit Vault v2).** The mnemonic, the seed and the passphrase (or a private key and its WIF) are stored only
@@ -84,11 +85,13 @@ and the libraries bundled in [`js/`](js) (listed in [`js/README.md`](js/README.m
 从 5.0 版本起，Ownbit 接触私钥的核心代码开源：**助记词生成、密钥保管、密钥派生和签名**。本仓库就是 Ownbit iOS App 使用的这部分代码，
 以及两个 App 共用的 JavaScript 签名库。界面代码和与 Ownbit 服务器通信的代码不在其中。
 
-- **助记词**：在内置的 BIP39 代码里用系统安全随机数（`crypto.getRandomValues`）生成 12 / 24 个词；种子 = BIP39(助记词, passphrase)。
+- **助记词**：在内置的 BIP39 代码里用系统安全随机数生成 12 / 24 个词（iOS 用 `crypto.getRandomValues`；Android 用 `SecureRandom` 生成熵，再由 JS 的 `entropyToMnemonic` 转成单词）；种子 = BIP39(助记词, passphrase)。
 - **保管（Ownbit Vault v2）**：助记词、种子、passphrase（私钥钱包是私钥和 WIF）只以密文保存：scrypt（N=32768、r=8、p=1，每个钱包随机 16 字节盐）
   + AES-256-GCM（每段随机 nonce，带完整性校验）。手机上再混入一把只存本机、不同步、不进整机备份的设备密钥，
   所以钱包数据库被拷走也无法在别处暴力破解；iCloud 助记词备份用同样的格式但不绑设备，换手机可以凭密码恢复。5.1 之前创建的助记词钱包在第一次输入密码时自动升级，
   iCloud 备份在下次重新备份时换成新格式。
 - **签名**：在本机由 [`js/`](js) 里的签名库派生密钥、签名；Swift 传给 JavaScript 的值一律转义。冷钱包公共协议在签名前解析、校验其他钱包发来的请求。
+- **Android**：[`android/`](android) 是 Ownbit Android 5.x 的同一部分代码（Kotlin，Gradle 工程）：同样的 OBV2 格式，设备密钥放在 Android Keystore；
+  签名同样使用 [`js/`](js) 里的签名库，Kotlin 只以 JSON 数据方式传参。说明见 [`android/README.md`](android/README.md)。
 - **币种**：见上方 Supported chains。
 - **许可证**：MIT。漏洞请按 [SECURITY.md](SECURITY.md) 私下报告。

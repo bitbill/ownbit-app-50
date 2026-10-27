@@ -1,0 +1,647 @@
+{
+ "_provenance": "Outputs of BitSignerEngine.dispatch from BitSigner/Resources/signer.js (1,038,606 B, SHA-256 cc635409438635544bcada7adef68893fd4f60c84101edcda33209c5407d0752) in a Node vm, wallet 'abandon x11 about', local wallet id w1; request fixtures evm-public-ui.json and native-vectors.json vector 0. Model parsing tests only, not golden vectors.",
+ "pairing_btcNative": {
+  "type": "crypto-account",
+  "frames": [
+   "UR:CRYPTO-ACCOUNT/OEADCYJKSKTNBKAOLYTAADMWTAADDLPDAOWKAXHDCLAOJOKNIDZCPSSAJTPTRPFRCECFKKAMYKJTVTCSBTBDTKCFIYVYOETNEEYKWFNBNYNDAHTAADEHNBAMTAADDYOTADLNCSGHYKAEYKAEYKAOCYJKSKTNBKAXAXAAHDCXGEGUNBPYCLRHUOMDLNNSGLMOOYHSCFGLAXRTWSFHYKADGESWMOWKEOSSKOGHMHZTAYCYKBWFDNUYASINFWINJYGUINIOJTIHJPBKKSCSFWINJYGUINIOJTIHJPCXJOKPIDJZINIACXHSIAIAJLKPJTJYTYETFRJP"
+  ],
+  "text": "UR:CRYPTO-ACCOUNT/OEADCYJKSKTNBKAOLYTAADMWTAADDLPDAOWKAXHDCLAOJOKNIDZCPSSAJTPTRPFRCECFKKAMYKJTVTCSBTBDTKCFIYVYOETNEEYKWFNBNYNDAHTAADEHNBAMTAADDYOTADLNCSGHYKAEYKAEYKAOCYJKSKTNBKAXAXAAHDCXGEGUNBPYCLRHUOMDLNNSGLMOOYHSCFGLAXRTWSFHYKADGESWMOWKEOSSKOGHMHZTAYCYKBWFDNUYASINFWINJYGUINIOJTIHJPBKKSCSFWINJYGUINIOJTIHJPCXJOKPIDJZINIACXHSIAIAJLKPJTJYTYETFRJP",
+  "path": "m/84'/0'/0'",
+  "address": "bc1qcr8te4kr609gcawutmrza0j4xv80jy8z306fyu",
+  "profile": "native",
+  "outputMode": "accountXpub",
+  "payloadFormat": "json",
+  "payload": {
+   "master-fingerprint": 1942346250,
+   "output-descriptors": [
+    {
+     "witness-public-key-hash": {
+      "crypto-hdkey": {
+       "is-private": false,
+       "key-data": "02707a62fdacc26ea9b63b1c197906f56ee0180d0bcf1966e1a2da34f5f3a09a9b",
+       "use-info": {
+        "crypto-coin-info": {}
+       },
+       "origin": {
+        "crypto-keypath": {
+         "components": [
+          84,
+          true,
+          0,
+          true,
+          0,
+          true
+         ],
+         "source-fingerprint": 1942346250,
+         "depth": 3
+        }
+       },
+       "chain-code": "4a53a0ab21b9dc95869c4e92a161194e03c0ef3ff5014ac692f433c4765490fc",
+       "parent-fingerprint": 2129865691,
+       "name": "BitSigner",
+       "note": "BitSigner public account"
+      }
+     }
+    }
+   ]
+  },
+  "payloadBytes": 160,
+  "note": "Public account key. Receive and change addresses can be derived."
+ },
+ "pairing_btcAddress": {
+  "type": "address",
+  "frames": [
+   "bc1qcr8te4kr609gcawutmrza0j4xv80jy8z306fyu"
+  ],
+  "text": "bc1qcr8te4kr609gcawutmrza0j4xv80jy8z306fyu",
+  "address": "bc1qcr8te4kr609gcawutmrza0j4xv80jy8z306fyu",
+  "path": "m/84'/0'/0'/0/0",
+  "profile": "native",
+  "outputMode": "address",
+  "payloadFormat": "text",
+  "payload": "bc1qcr8te4kr609gcawutmrza0j4xv80jy8z306fyu",
+  "payloadBytes": 42
+ },
+ "pairing_btcCosigner": {
+  "type": "crypto-account",
+  "frames": [
+   "UR:CRYPTO-ACCOUNT/OEADCYJKSKTNBKAOLYTAADMETAADDLPDAOWKAXHDCLAOCYFRYKZOYLEMTIWFINMUZCFGUOGABWASFRWMGUDPIHGWVTURTALUTDKPLPUONEDTAHTAADEHNBAMTAADDYOTADLOCSDYYKAEYKAEYKAOYKAOCYJKSKTNBKAXAAAAHDCXRKNBSTSGCMBKLTBAZERHFZPYMHTIWKDEGWWDCWHYBTCLCHIOKBLFFHSRKBDPHGIAAYCYCEWZMSCMASINFWINJYGUINIOJTIHJPBKKSCSFWINJYGUINIOJTIHJPCXJOKPIDJZINIACXHSIAIAJLKPJTJYEMDMSFUE"
+  ],
+  "text": "UR:CRYPTO-ACCOUNT/OEADCYJKSKTNBKAOLYTAADMETAADDLPDAOWKAXHDCLAOCYFRYKZOYLEMTIWFINMUZCFGUOGABWASFRWMGUDPIHGWVTURTALUTDKPLPUONEDTAHTAADEHNBAMTAADDYOTADLOCSDYYKAEYKAEYKAOYKAOCYJKSKTNBKAXAAAAHDCXRKNBSTSGCMBKLTBAZERHFZPYMHTIWKDEGWWDCWHYBTCLCHIOKBLFFHSRKBDPHGIAAYCYCEWZMSCMASINFWINJYGUINIOJTIHJPBKKSCSFWINJYGUINIOJTIHJPCXJOKPIDJZINIACXHSIAIAJLKPJTJYEMDMSFUE",
+  "path": "m/48'/0'/0'/2'",
+  "address": "",
+  "profile": "multisig-native",
+  "outputMode": "accountXpub",
+  "payloadFormat": "json",
+  "payload": {
+   "master-fingerprint": 1942346250,
+   "output-descriptors": [
+    {
+     "witness-script-hash": {
+      "crypto-hdkey": {
+       "is-private": false,
+       "key-data": "021a3bf5fbf737d0f36993fd46dc4913093beb532d654fe0dfd98bd27585dc9f29",
+       "use-info": {
+        "crypto-coin-info": {}
+       },
+       "origin": {
+        "crypto-keypath": {
+         "components": [
+          48,
+          true,
+          0,
+          true,
+          0,
+          true,
+          2,
+          true
+         ],
+         "source-fingerprint": 1942346250,
+         "depth": 4
+        }
+       },
+       "chain-code": "bba0c7ca160a870efeb940ab90d0f4284fea1b5e0d2117677e823fc37e2d5763",
+       "parent-fingerprint": 485660438,
+       "name": "BitSigner",
+       "note": "BitSigner public account"
+      }
+     }
+    }
+   ]
+  },
+  "payloadBytes": 162,
+  "note": "Cosigner account key only. No threshold or complete wallet policy is included."
+ },
+ "pairing_evmWallet": {
+  "type": "crypto-hdkey",
+  "frames": [
+   "UR:CRYPTO-HDKEY/PTAOWKAXHDCLAOWDVEROKOPDINHSEEROISYALKSAYKCTJSHEDPRNUYJYFGROVAWEWFTYGHCEGLRPKGAHTAADEHOYADCSFNAMTAADDYOTADLNCSDWYKCSFNYKAEYKAOCYJKSKTNBKAXAXAAHDCXTPLFJSLUKNFWLAISAXWYPALBJYLSWZAMCXHSCYUYLOZTMWFNLDLGSKPYPTGSDECFAYCYTEDMFEAYATTAADDYOYADLRAEWKLAWKASINFWINJYGUINIOJTIHJPBKKSCSFWINJYGUINIOJTIHJPCXJOKPIDJZINIACXHSIAIAJLKPJTJYFSVOBNZS"
+  ],
+  "text": "UR:CRYPTO-HDKEY/PTAOWKAXHDCLAOWDVEROKOPDINHSEEROISYALKSAYKCTJSHEDPRNUYJYFGROVAWEWFTYGHCEGLRPKGAHTAADEHOYADCSFNAMTAADDYOTADLNCSDWYKCSFNYKAEYKAOCYJKSKTNBKAXAXAAHDCXTPLFJSLUKNFWLAISAXWYPALBJYLSWZAMCXHSCYUYLOZTMWFNLDLGSKPYPTGSDECFAYCYTEDMFEAYATTAADDYOYADLRAEWKLAWKASINFWINJYGUINIOJTIHJPBKKSCSFWINJYGUINIOJTIHJPCXJOKPIDJZINIACXHSIAIAJLKPJTJYFSVOBNZS",
+  "address": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+  "path": "m/44'/60'/0'",
+  "profile": "standard",
+  "outputMode": "wallet",
+  "payloadFormat": "json",
+  "payload": {
+   "is-private": false,
+   "key-data": "02eae4b876a8696134b868f88cc2f51f715f2dbedb7446b8e6edf3d4541c4eb67b",
+   "use-info": {
+    "crypto-coin-info": {
+     "type": 60
+    }
+   },
+   "origin": {
+    "crypto-keypath": {
+     "components": [
+      44,
+      true,
+      60,
+      true,
+      0,
+      true
+     ],
+     "source-fingerprint": 1942346250,
+     "depth": 3
+    }
+   },
+   "chain-code": "d882718b7a42806803eeb17f7483f20620611adb88fc943c898dc5aba94c2819",
+   "parent-fingerprint": 3543024904,
+   "children": {
+    "crypto-keypath": {
+     "components": [
+      0,
+      false,
+      [],
+      false
+     ]
+    }
+   },
+   "name": "BitSigner",
+   "note": "BitSigner public account"
+  },
+  "payloadBytes": 160
+ },
+ "pairing_tron": {
+  "type": "address",
+  "frames": [
+   "TUEZSdKsoDHQMeZwihtdoBiN46zxhGWYdH"
+  ],
+  "text": "TUEZSdKsoDHQMeZwihtdoBiN46zxhGWYdH",
+  "address": "TUEZSdKsoDHQMeZwihtdoBiN46zxhGWYdH",
+  "path": "m/44'/195'/0'/0/0",
+  "profile": "standard",
+  "outputMode": "address",
+  "payloadFormat": "text",
+  "payload": "TUEZSdKsoDHQMeZwihtdoBiN46zxhGWYdH",
+  "payloadBytes": 34
+ },
+ "pairing_solWallet": {
+  "type": "crypto-multi-accounts",
+  "frames": [
+   "UR:CRYPTO-MULTI-ACCOUNTS/OXADCYJKSKTNBKAOLYTAADDLOLAOWKAXHDCXWTENDIIDFGOSHPNTVLEENNTYDNBZVOEYYNGYMYSABSHESNGWCAIEVSCTNDTDHDYLAHTAADEHOYADCFADYKAMTAADDYOTADLOCSDWYKCFADYKYKAEYKAEYKAOCYJKSKTNBKAXAAASINFWINJYGUINIOJTIHJPBKKSCSFWINJYGUINIOJTIHJPCXJOKPIDJZINIACXHSIAIAJLKPJTJYAXINFWINJYGUINIOJTIHJPAHIHEHDMDYDMDYMHTNRDLU"
+  ],
+  "text": "UR:CRYPTO-MULTI-ACCOUNTS/OXADCYJKSKTNBKAOLYTAADDLOLAOWKAXHDCXWTENDIIDFGOSHPNTVLEENNTYDNBZVOEYYNGYMYSABSHESNGWCAIEVSCTNDTDHDYLAHTAADEHOYADCFADYKAMTAADDYOTADLOCSDWYKCFADYKYKAEYKAEYKAOCYJKSKTNBKAXAAASINFWINJYGUINIOJTIHJPBKKSCSFWINJYGUINIOJTIHJPCXJOKPIDJZINIACXHSIAIAJLKPJTJYAXINFWINJYGUINIOJTIHJPAHIHEHDMDYDMDYMHTNRDLU",
+  "address": "HAgk14JpMQLgt6rVgv7cBQFJWFto5Dqxi472uT3DKpqk",
+  "path": "m/44'/501'/0'/0'",
+  "profile": "standard",
+  "outputMode": "wallet",
+  "payloadFormat": "json",
+  "payload": {
+   "master-fingerprint": 1942346250,
+   "keys": [
+    {
+     "crypto-hdkey": {
+      "is-private": false,
+      "key-data": "f036276246a75b9de3349ed42b15e232f6518fc20f5fcd4f1d64e81f9bd258f7",
+      "use-info": {
+       "crypto-coin-info": {
+        "type": 501
+       }
+      },
+      "origin": {
+       "crypto-keypath": {
+        "components": [
+         44,
+         true,
+         501,
+         true,
+         0,
+         true,
+         0,
+         true
+        ],
+        "source-fingerprint": 1942346250,
+        "depth": 4
+       }
+      },
+      "name": "BitSigner",
+      "note": "BitSigner public account"
+     }
+    }
+   ],
+   "device": "BitSigner",
+   "version": "1.0.0"
+  },
+  "payloadBytes": 141
+ },
+ "scan_evm": {
+  "complete": true,
+  "progress": 1,
+  "request": {
+   "chain": "evm",
+   "path": "m/44'/60'/0'/0/0",
+   "masterFingerprint": "73c5da0a",
+   "transport": {
+    "type": "eth-sign-request",
+    "payloadEncoding": "cbor",
+    "payloadBytes": "a701d825508f235e99e6e84044a51d51ec3ec942b00258354269745369676e6572207075626c696320554920666978747572652e204e6f2066756e6473206f72207065726d697373696f6e732e0303040105d90130a2018a182cf5183cf500f500f400f4021a73c5da0a06549858effd232b4033e47d90003d41ec34ecaeda9407735075626c696320746573742066697874757265",
+    "requestId": "8f235e99e6e84044a51d51ec3ec942b0",
+    "origin": "Public test fixture",
+    "dataType": 3,
+    "chainId": 1
+   },
+   "chainId": 1,
+   "address": "0x9858effd232b4033e47d90003d41ec34ecaeda94",
+   "kind": "personal",
+   "message": "0x4269745369676e6572207075626c696320554920666978747572652e204e6f2066756e6473206f72207065726d697373696f6e732e"
+  }
+ },
+ "scan_psbt": {
+  "complete": true,
+  "progress": 1,
+  "request": {
+   "chain": "bitcoin",
+   "psbt": "cHNidP8BAFICAAAAAYFwD+scFmeHtvYI22W5llNYndxFPmym4gESAFLcGZ2oAAAAAAD/////AZBfAQAAAAAAFgAURaXKkYxfBPgdgJnj4ES6lkXFXPkAAAAAAAEAUgIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP////8BoIYBAAAAAAAWABTAzrzWw9PKjHXcXsYuvlUzDvkQ4gAAAAABAR+ghgEAAAAAABYAFMDOvNbD08qMddxexi6+VTMO+RDiIgYDMNVP0N1CCm5fjTYk9fNILK41D3nV8HU79b7vnC2RrzwYc8XaClQAAIAAAACAAAAAgAAAAAAAAAAAAAA=",
+   "transport": {
+    "type": "psbt-base64",
+    "payloadEncoding": "psbt",
+    "payloadBytes": "70736274ff010052020000000181700feb1c166787b6f608db65b99653589ddc453e6ca6e201120052dc199da80000000000ffffffff01905f01000000000016001445a5ca918c5f04f81d8099e3e044ba9645c55cf90000000000010052020000000100000000000000000000000000000000000000000000000000000000000000000000000000ffffffff01a086010000000000160014c0cebcd6c3d3ca8c75dc5ec62ebe55330ef910e20000000001011fa086010000000000160014c0cebcd6c3d3ca8c75dc5ec62ebe55330ef910e222060330d54fd0dd420a6e5f8d3624f5f3482cae350f79d5f0753bf5beef9c2d91af3c1873c5da0a54000080000000800000008000000000000000000000"
+   }
+  }
+ },
+ "plan_ready": {
+  "version": 1,
+  "status": "ready",
+  "requestHash": "a05ea69096eb986f75275407e4749ca938511775d67fed164e44f237d67efa57",
+  "payloadDigest": "45154f1461335db3b8b9a3a2cc483dcdb7af9bacfca543481e550623c05f1f99",
+  "protocolProfile": "eth-sign-request",
+  "originalPayloadBytes": "a701d825508f235e99e6e84044a51d51ec3ec942b00258354269745369676e6572207075626c696320554920666978747572652e204e6f2066756e6473206f72207065726d697373696f6e732e0303040105d90130a2018a182cf5183cf500f500f400f4021a73c5da0a06549858effd232b4033e47d90003d41ec34ecaeda9407735075626c696320746573742066697874757265",
+  "signingBytesDigest": "8d632f824a7373c9edd31d7d39e6ecef7cb47708b0366f64e12384d0f3f95ebd",
+  "chain": "evm",
+  "review": {
+   "chain": "evm",
+   "title": "Sign Ethereum message",
+   "summary": "Personal signature (EIP-191)",
+   "fields": [
+    {
+     "label": "Derivation path",
+     "value": "m/44'/60'/0'/0/0"
+    },
+    {
+     "label": "Requested signer",
+     "value": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94"
+    },
+    {
+     "label": "Network context",
+     "value": "Ethereum (request context only; not bound by personal message)"
+    },
+    {
+     "label": "Message",
+     "value": "\"BitSigner public UI fixture. No funds or permissions.\""
+    },
+    {
+     "label": "Exact message bytes",
+     "value": "0x4269745369676e6572207075626c696320554920666978747572652e204e6f2066756e6473206f72207065726d697373696f6e732e"
+    }
+   ],
+   "warnings": [
+    "Message signatures can authorize logins, orders or asset actions. Verify the entire message and origin."
+   ],
+   "requestHash": "a05ea69096eb986f75275407e4749ca938511775d67fed164e44f237d67efa57",
+   "canSign": true,
+   "decodeStatus": "fullyDecoded",
+   "riskLevel": "high",
+   "display": {
+    "action": "Sign Message",
+    "headline": "BitSigner public UI fixture. No funds or permissions."
+   },
+   "network": {
+    "chainId": "1",
+    "name": "Ethereum",
+    "symbol": "ETH"
+   }
+  },
+  "tasks": [
+   {
+    "id": "b06e4a4c057660dd15f68196328d17caf422032d0edbeba1acda1797f5fe74b2",
+    "localWalletId": "w1",
+    "walletKeyId": "95f7c3fcf6b598ef252e4ee3857f84e712d3264719314d8ccc1bbeceed2d9a34",
+    "chain": "evm",
+    "targets": [
+     {
+      "chain": "evm",
+      "profile": "standard",
+      "path": "m/44'/60'/0'/0/0",
+      "index": 0,
+      "branch": 0,
+      "publicKey": "0237b0bb7a8288d38ed49a524b5dc98cff3eb5ca824c9f9dc0dfdb3d9cd600f299",
+      "address": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+      "masterFingerprint": "73c5da0a"
+     }
+    ],
+    "paths": [
+     "m/44'/60'/0'/0/0"
+    ],
+    "publicKeys": [
+     "0237b0bb7a8288d38ed49a524b5dc98cff3eb5ca824c9f9dc0dfdb3d9cd600f299"
+    ],
+    "addresses": [
+     "0x9858EfFD232B4033E47d90003D41EC34EcaEda94"
+    ],
+    "inputs": [],
+    "signatureAlgorithm": "ECDSA secp256k1",
+    "signingBytesDigest": "8d632f824a7373c9edd31d7d39e6ecef7cb47708b0366f64e12384d0f3f95ebd"
+   }
+  ],
+  "planHash": "fcfd49808c47be04fb89a92a48224691cafe01589555ef95b7133c7a15392475"
+ },
+ "plan_noMatch": {
+  "version": 1,
+  "status": "noMatch",
+  "message": "No matching wallet",
+  "tasks": [],
+  "review": {
+   "chain": "evm",
+   "title": "Sign Ethereum message",
+   "summary": "Personal signature (EIP-191)",
+   "fields": [
+    {
+     "label": "Derivation path",
+     "value": "m/44'/60'/0'/0/0"
+    },
+    {
+     "label": "Requested signer",
+     "value": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94"
+    },
+    {
+     "label": "Network context",
+     "value": "Ethereum (request context only; not bound by personal message)"
+    },
+    {
+     "label": "Message",
+     "value": "\"BitSigner public UI fixture. No funds or permissions.\""
+    },
+    {
+     "label": "Exact message bytes",
+     "value": "0x4269745369676e6572207075626c696320554920666978747572652e204e6f2066756e6473206f72207065726d697373696f6e732e"
+    }
+   ],
+   "warnings": [
+    "Message signatures can authorize logins, orders or asset actions. Verify the entire message and origin."
+   ],
+   "requestHash": "a05ea69096eb986f75275407e4749ca938511775d67fed164e44f237d67efa57",
+   "canSign": true,
+   "decodeStatus": "fullyDecoded",
+   "riskLevel": "high",
+   "display": {
+    "action": "Sign Message",
+    "headline": "BitSigner public UI fixture. No funds or permissions."
+   },
+   "network": {
+    "chainId": "1",
+    "name": "Ethereum",
+    "symbol": "ETH"
+   }
+  }
+ },
+ "plan_setup": {
+  "version": 1,
+  "status": "setupRequired",
+  "message": "Wallet setup required",
+  "tasks": [],
+  "review": {
+   "chain": "evm",
+   "title": "Sign Ethereum message",
+   "summary": "Personal signature (EIP-191)",
+   "fields": [
+    {
+     "label": "Derivation path",
+     "value": "m/44'/60'/0'/0/0"
+    },
+    {
+     "label": "Requested signer",
+     "value": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94"
+    },
+    {
+     "label": "Network context",
+     "value": "Ethereum (request context only; not bound by personal message)"
+    },
+    {
+     "label": "Message",
+     "value": "\"BitSigner public UI fixture. No funds or permissions.\""
+    },
+    {
+     "label": "Exact message bytes",
+     "value": "0x4269745369676e6572207075626c696320554920666978747572652e204e6f2066756e6473206f72207065726d697373696f6e732e"
+    }
+   ],
+   "warnings": [
+    "Message signatures can authorize logins, orders or asset actions. Verify the entire message and origin."
+   ],
+   "requestHash": "a05ea69096eb986f75275407e4749ca938511775d67fed164e44f237d67efa57",
+   "canSign": true,
+   "decodeStatus": "fullyDecoded",
+   "riskLevel": "high",
+   "display": {
+    "action": "Sign Message",
+    "headline": "BitSigner public UI fixture. No funds or permissions."
+   },
+   "network": {
+    "chainId": "1",
+    "name": "Ethereum",
+    "symbol": "ETH"
+   }
+  }
+ },
+ "result_evm": {
+  "chain": "evm",
+  "requestHash": "a05ea69096eb986f75275407e4749ca938511775d67fed164e44f237d67efa57",
+  "address": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+  "signature": "6e0c75cba30c35be7c7b81ecfe9a7d5d3c6a5de57f3e41a8f33302a0667387f74ccbdc4de1695cfc98ddde775c7817f5f0a5de39b51b2617c08ad712d3f3e6e91b",
+  "digest": "0x8d632f824a7373c9edd31d7d39e6ecef7cb47708b0366f64e12384d0f3f95ebd",
+  "qrSignature": "6e0c75cba30c35be7c7b81ecfe9a7d5d3c6a5de57f3e41a8f33302a0667387f74ccbdc4de1695cfc98ddde775c7817f5f0a5de39b51b2617c08ad712d3f3e6e91b",
+  "planHash": "fcfd49808c47be04fb89a92a48224691cafe01589555ef95b7133c7a15392475",
+  "taskId": "b06e4a4c057660dd15f68196328d17caf422032d0edbeba1acda1797f5fe74b2",
+  "completedTaskIds": [
+   "b06e4a4c057660dd15f68196328d17caf422032d0edbeba1acda1797f5fe74b2"
+  ]
+ },
+ "response_evm": {
+  "type": "eth-signature",
+  "frames": [
+   "UR:ETH-SIGNATURE/OEADTPDAGDMYCNHYNLVAVSFZFYONCAGYWPFMSOFWPFAOHDFPJTBNKPSBOTBNECRNKEKGLYWPZENYKIHLFNIMHLVWLBFMFPPDWFEOAONBIYJKLTYLGSSBUOGTVYINHHZTMKUTUEKTHHKSCHYKWTONUEESRECWDSCHRTLETSBGTEWFVAWLCWTLLRUESN"
+  ],
+  "payloadFormat": "json",
+  "payload": {
+   "request-id": {
+    "uuid": "8f235e99e6e84044a51d51ec3ec942b0"
+   },
+   "signature": "6e0c75cba30c35be7c7b81ecfe9a7d5d3c6a5de57f3e41a8f33302a0667387f74ccbdc4de1695cfc98ddde775c7817f5f0a5de39b51b2617c08ad712d3f3e6e91b"
+  },
+  "payloadBytes": 89
+ },
+ "plan_psbt": {
+  "version": 1,
+  "status": "ready",
+  "requestHash": "9e60a6f1f2903c19f27cf557321bcc6f71df7e99b362cfef773e69fc4abc56c5",
+  "payloadDigest": "13a41c42e87dc68b9e22b02f11f9ef44a5544a5849c76356778915e26fee81b0",
+  "protocolProfile": "psbt-base64",
+  "originalPayloadBytes": "70736274ff010052020000000181700feb1c166787b6f608db65b99653589ddc453e6ca6e201120052dc199da80000000000ffffffff01905f01000000000016001445a5ca918c5f04f81d8099e3e044ba9645c55cf90000000000010052020000000100000000000000000000000000000000000000000000000000000000000000000000000000ffffffff01a086010000000000160014c0cebcd6c3d3ca8c75dc5ec62ebe55330ef910e20000000001011fa086010000000000160014c0cebcd6c3d3ca8c75dc5ec62ebe55330ef910e222060330d54fd0dd420a6e5f8d3624f5f3482cae350f79d5f0753bf5beef9c2d91af3c1873c5da0a54000080000000800000008000000000000000000000",
+  "signingBytesDigest": "f1887023cbbd4fad61102db1a04494627b0f5f75ec59a67cbf4347ce84d49b62",
+  "chain": "bitcoin",
+  "review": {
+   "chain": "bitcoin",
+   "title": "Sign Bitcoin transaction",
+   "summary": "Send 0.0009 BTC",
+   "fields": [
+    {
+     "label": "Network",
+     "value": "Bitcoin"
+    },
+    {
+     "label": "Network context",
+     "value": "Network context not included"
+    },
+    {
+     "label": "Inputs",
+     "value": "1"
+    },
+    {
+     "label": "Locktime",
+     "value": "0"
+    },
+    {
+     "label": "Input 1",
+     "value": "wpkh; 0.001 BTC; a89d19dc52001201e2a66c3e45dc9d585396b965db08f6b68767161ceb0f7081:0"
+    },
+    {
+     "label": "Input 1 sighash",
+     "value": "ALL"
+    },
+    {
+     "label": "Output 1",
+     "value": "0.0009 BTC\nbc1qgkju4yvvtuz0s8vqn837q396jezu2h8ex7gk98"
+    },
+    {
+     "label": "Total output",
+     "value": "0.0009 BTC"
+    },
+    {
+     "label": "Network fee",
+     "value": "0.0001 BTC"
+    }
+   ],
+   "warnings": [
+    "Every output is shown. Change ownership and the intended multisig policy are not inferred from untrusted PSBT labels.",
+    "HIGH FEE: Fee exceeds 0.01 BTC or 1% of input value. Verify it carefully."
+   ],
+   "requestHash": "9e60a6f1f2903c19f27cf557321bcc6f71df7e99b362cfef773e69fc4abc56c5",
+   "canSign": true,
+   "decodeStatus": "fullyDecoded",
+   "riskLevel": "high",
+   "network": {
+    "name": "Bitcoin",
+    "symbol": "BTC"
+   },
+   "display": {
+    "action": "Send",
+    "fee": "0.0001 BTC",
+    "amount": "0.0009",
+    "symbol": "BTC",
+    "counterpartyLabel": "To",
+    "counterparty": "bc1qgkju4yvvtuz0s8vqn837q396jezu2h8ex7gk98"
+   }
+  },
+  "tasks": [
+   {
+    "id": "9a24f3074989ccbba2003db1421579160dbeef3913ab565a4feb4fe7811aeda1",
+    "localWalletId": "w1",
+    "walletKeyId": "95f7c3fcf6b598ef252e4ee3857f84e712d3264719314d8ccc1bbeceed2d9a34",
+    "chain": "bitcoin",
+    "targets": [
+     {
+      "chain": "bitcoin",
+      "profile": "native",
+      "path": "m/84'/0'/0'/0/0",
+      "index": 0,
+      "branch": 0,
+      "publicKey": "0330d54fd0dd420a6e5f8d3624f5f3482cae350f79d5f0753bf5beef9c2d91af3c",
+      "address": "bc1qcr8te4kr609gcawutmrza0j4xv80jy8z306fyu",
+      "masterFingerprint": "73c5da0a",
+      "inputIndex": 0
+     }
+    ],
+    "paths": [
+     "m/84'/0'/0'/0/0"
+    ],
+    "publicKeys": [
+     "0330d54fd0dd420a6e5f8d3624f5f3482cae350f79d5f0753bf5beef9c2d91af3c"
+    ],
+    "addresses": [
+     "bc1qcr8te4kr609gcawutmrza0j4xv80jy8z306fyu"
+    ],
+    "inputs": [
+     0
+    ],
+    "signatureAlgorithm": "ECDSA / BIP340",
+    "signingBytesDigest": "f1887023cbbd4fad61102db1a04494627b0f5f75ec59a67cbf4347ce84d49b62"
+   }
+  ],
+  "planHash": "bbcbf6d966ca6b928833639648248b7aff8ab33ef34120a31b7b17ebc8ad87d4"
+ },
+ "result_psbt": {
+  "chain": "bitcoin",
+  "requestHash": "9e60a6f1f2903c19f27cf557321bcc6f71df7e99b362cfef773e69fc4abc56c5",
+  "psbt": "cHNidP8BAFICAAAAAYFwD+scFmeHtvYI22W5llNYndxFPmym4gESAFLcGZ2oAAAAAAD/////AZBfAQAAAAAAFgAURaXKkYxfBPgdgJnj4ES6lkXFXPkAAAAAAAEAUgIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP////8BoIYBAAAAAAAWABTAzrzWw9PKjHXcXsYuvlUzDvkQ4gAAAAABAR+ghgEAAAAAABYAFMDOvNbD08qMddxexi6+VTMO+RDiIgIDMNVP0N1CCm5fjTYk9fNILK41D3nV8HU79b7vnC2RrzxHMEQCIHEXQOsMDpHxJ4kiUCwN4Zz4be/jvMEKQ1+QOAf1FnFFAiAerbojC1Va5esJmDhKYBGDvQQla35isPPF1DRAEbQUPQEiBgMw1U/Q3UIKbl+NNiT180gsrjUPedXwdTv1vu+cLZGvPBhzxdoKVAAAgAAAAIAAAACAAAAAAAAAAAAAAA==",
+  "signedInputs": 1,
+  "signedInputIndexes": [
+   0
+  ],
+  "planHash": "bbcbf6d966ca6b928833639648248b7aff8ab33ef34120a31b7b17ebc8ad87d4",
+  "taskId": "9a24f3074989ccbba2003db1421579160dbeef3913ab565a4feb4fe7811aeda1",
+  "completedTaskIds": [
+   "9a24f3074989ccbba2003db1421579160dbeef3913ab565a4feb4fe7811aeda1"
+  ]
+ },
+ "response_psbt": {
+  "type": "psbt-base64",
+  "frames": [
+   "cHNidP8BAFICAAAAAYFwD+scFmeHtvYI22W5llNYndxFPmym4gESAFLcGZ2oAAAAAAD/////AZBfAQAAAAAAFgAURaXKkYxfBPgdgJnj4ES6lkXFXPkAAAAAAAEAUgIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP////8BoIYBAAAAAAAWABTAzrzWw9PKjHXcXsYuvlUzDvkQ4gAAAAABAR+ghgEAAAAAABYAFMDOvNbD08qMddxexi6+VTMO+RDiIgIDMNVP0N1CCm5fjTYk9fNILK41D3nV8HU79b7vnC2RrzxHMEQCIHEXQOsMDpHxJ4kiUCwN4Zz4be/jvMEKQ1+QOAf1FnFFAiAerbojC1Va5esJmDhKYBGDvQQla35isPPF1DRAEbQUPQEiBgMw1U/Q3UIKbl+NNiT180gsrjUPedXwdTv1vu+cLZGvPBhzxdoKVAAAgAAAAIAAAACAAAAAAAAAAAAAAA=="
+  ],
+  "payloadFormat": "json",
+  "payload": {
+   "psbt_base64": "cHNidP8BAFICAAAAAYFwD+scFmeHtvYI22W5llNYndxFPmym4gESAFLcGZ2oAAAAAAD/////AZBfAQAAAAAAFgAURaXKkYxfBPgdgJnj4ES6lkXFXPkAAAAAAAEAUgIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP////8BoIYBAAAAAAAWABTAzrzWw9PKjHXcXsYuvlUzDvkQ4gAAAAABAR+ghgEAAAAAABYAFMDOvNbD08qMddxexi6+VTMO+RDiIgIDMNVP0N1CCm5fjTYk9fNILK41D3nV8HU79b7vnC2RrzxHMEQCIHEXQOsMDpHxJ4kiUCwN4Zz4be/jvMEKQ1+QOAf1FnFFAiAerbojC1Va5esJmDhKYBGDvQQla35isPPF1DRAEbQUPQEiBgMw1U/Q3UIKbl+NNiT180gsrjUPedXwdTv1vu+cLZGvPBhzxdoKVAAAgAAAAIAAAACAAAAAAAAAAAAAAA==",
+   "decoded": {
+    "psbt_version": 0,
+    "tx": {
+     "txid": "9257c133c4c2b425d92633c3d6101c563a008feee3782a1794333445fb49b4f3",
+     "version": 2,
+     "locktime": 0,
+     "vin": [
+      {
+       "txid": "a89d19dc52001201e2a66c3e45dc9d585396b965db08f6b68767161ceb0f7081",
+       "vout": 0,
+       "sequence": 4294967295
+      }
+     ],
+     "vout": [
+      {
+       "n": 0,
+       "value_sat": 90000,
+       "scriptPubKey": {
+        "hex": "001445a5ca918c5f04f81d8099e3e044ba9645c55cf9",
+        "address": "bc1qgkju4yvvtuz0s8vqn837q396jezu2h8ex7gk98"
+       }
+      }
+     ]
+    },
+    "inputs": [
+     {
+      "partial_signatures": {
+       "0330d54fd0dd420a6e5f8d3624f5f3482cae350f79d5f0753bf5beef9c2d91af3c": "30440220711740eb0c0e91f1278922502c0de19cf86defe3bcc10a435f903807f516714502201eadba230b555ae5eb0998384a601183bd04256b7e62b0f3c5d4344011b4143d01"
+      }
+     }
+    ]
+   }
+  },
+  "payloadBytes": 379
+ },
+ "error_pairing_scan": {
+  "ok": false,
+  "error": {
+   "code": "QR_PROTOCOL",
+   "message": "Unsupported signing UR type"
+  }
+ }
+}
