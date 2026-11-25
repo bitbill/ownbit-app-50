@@ -48,24 +48,24 @@ static void blockmix_salsa8(uint32_t *, uint32_t *, uint32_t *, size_t);
 static uint64_t integerify(void *, size_t);
 static void smix(uint8_t *, size_t, uint64_t, uint32_t *, uint32_t *);
 
+/*
+ * 2026-11-23 (Ownbit): blkcpy / blkxor used to access the uint32_t blocks through size_t pointers, which breaks C's
+ * strict-aliasing rule. Apple clang 21 at -Os (the Release default) then lets salsa20_8 read stale stack data, so every
+ * Release build computed a wrong scrypt that also differs on every call (Debug -O0 was correct). Same fix as upstream
+ * Tarsnap: copy with memcpy, xor as uint32_t (every buffer passed here is a uint32_t array).
+ */
 static void
 blkcpy(void * dest, void * src, size_t len)
 {
-	size_t * D = dest;
-	size_t * S = src;
-	size_t L = len / sizeof(size_t);
-	size_t i;
-
-	for (i = 0; i < L; i++)
-		D[i] = S[i];
+	memcpy(dest, src, len);
 }
 
 static void
 blkxor(void * dest, void * src, size_t len)
 {
-	size_t * D = dest;
-	size_t * S = src;
-	size_t L = len / sizeof(size_t);
+	uint32_t * D = dest;
+	uint32_t * S = src;
+	size_t L = len / sizeof(uint32_t);
 	size_t i;
 
 	for (i = 0; i < L; i++)

@@ -56,6 +56,15 @@ xcodebuild build -scheme OwnbitCore -destination 'generic/platform=iOS Simulator
 xcodebuild test  -scheme OwnbitCore -destination 'platform=iOS Simulator,name=iPhone 16'
 ```
 
+Release builds compile the C code at `-Os`, so run the scrypt vectors at that level too. The libscrypt copy here carries
+the November 2026 fix for a strict-aliasing bug that made scrypt return wrong keys at `-Os` (see the comment above
+`blkcpy` in [`crypto_scrypt-nosse.c`](iOS/Sources/CLibscrypt/crypto_scrypt-nosse.c)):
+
+```bash
+xcodebuild test -scheme OwnbitCore -destination 'platform=iOS Simulator,name=iPhone 16' \
+  GCC_OPTIMIZATION_LEVEL=s -only-testing:OwnbitCoreTests/VaultScryptTests
+```
+
 The tests read the JavaScript bundles from [`js/`](js) and the public-protocol golden data from
 `iOS/Tests/OwnbitCoreTests/PublicProtocol/Fixtures`. Test vectors are public ones only (BIP39 "abandon … about",
 "TREZOR", RFC 7914 …).
@@ -90,6 +99,7 @@ and the libraries bundled in [`js/`](js) (listed in [`js/README.md`](js/README.m
   + AES-256-GCM（每段随机 nonce，带完整性校验）。手机上再混入一把只存本机、不同步、不进整机备份的设备密钥，
   所以钱包数据库被拷走也无法在别处暴力破解；iCloud 助记词备份用同样的格式但不绑设备，换手机可以凭密码恢复。5.1 之前创建的助记词钱包在第一次输入密码时自动升级，
   iCloud 备份在下次重新备份时换成新格式。
+- **libscrypt 修复（2026-11）**：原 libscrypt 的 `blkcpy` / `blkxor` 违反 C 的严格别名规则，Apple clang 在 `-Os`（Release 默认）下会让 scrypt 算出错误的密钥；已按上游 Tarsnap 的写法修正（`memcpy` 复制、按 `uint32_t` 异或）。scrypt 向量要另外用 `GCC_OPTIMIZATION_LEVEL=s` 跑一遍（命令见上方 Build and test）。
 - **签名**：在本机由 [`js/`](js) 里的签名库派生密钥、签名；Swift 传给 JavaScript 的值一律转义。冷钱包公共协议在签名前解析、校验其他钱包发来的请求。
 - **Android**：[`android/`](android) 是 Ownbit Android 5.x 的同一部分代码（Kotlin，Gradle 工程）：同样的 OBV2 格式，设备密钥放在 Android Keystore；
   签名同样使用 [`js/`](js) 里的签名库，Kotlin 只以 JSON 数据方式传参。说明见 [`android/README.md`](android/README.md)。
